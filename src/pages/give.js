@@ -16,7 +16,7 @@ const Give = () => {
                 <TextInput label='Phone Number' />
                 <Button label='Give' type='submit' />
             </form>
-            <div className='space-y-3'>
+            <div className='space-y-3 text-sm'>
                 <p>What a blessing to hear from you and I’m thankful for your gift of ‘GHC’1 planted to God through this  ministry.</p>
                 <p>We’re promised in God’s Word that when we sow unto Him, in faith, we can believe for a multiplied harvest of blessing on our seed <span className='font-semibold lightText'>(Luke 6:38)</span></p>
                 <p>God is faithful... so be expecting miracles</p>
