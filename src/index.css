@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    @apply text-[#24222E] bg-[#F3F5F6]
+    @apply text-[#24222E] bg-[#F3F5F6] text-sm
 }
 
 .bgColor {
