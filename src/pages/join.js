@@ -1,0 +1,140 @@
+import { Benefits, StaffCard, ListItem, Footer} from "../components/components"
+
+const Join = () => {
+
+    const benefits = [
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+    ]
+
+    const items = [
+        'HISTORY OF LEADERS AND MINISTRY\'S GROWTH',
+        'MINISTRY VISION',
+        'STATEMENT OF BELIEFS',
+        'COPY OF MINISTRY LICENSE/ORDINATION CERTIFICATE',
+        'LETTER OF RECOMMENDATION FROM A COLLEAGUE IN THE MINISTRY',
+        'PHOTO OF MINISTRY LEADER',
+        'ARTICLES OF INCORPORATION AND BYLAWS',
+        'ANNUAL MEMBERSHIP FEE OF GHS 250.00'
+    ]
+
+    return (
+        <div className="flex flex-col">
+            <div className="w-full bg-gray-500 text-white h-auto px-8 py-16 flex flex-col items-center">
+                <p className="pb-5 text-lg font-light ">Join the <span className="font-bold">Family</span></p>
+                <button className="outline-none mb-24 font-semibold uppercase text-xs py-2 px-8 border">Become a Member</button>
+                <div className="text-xs flex flex-col items-center">
+                    <p>UNDERSTANDING <span className='font-bold'>GRACE</span></p>
+                    <p>EMPOWERING <span className='font-bold'>CHANGE</span></p>
+                </div>
+            </div>
+
+            {/* benefits */}
+            <div className="flex flex-col">
+                <p className="py-8 text-center font-bold">It's a fellowship</p>
+
+                {/* descrpition */}
+                <div className="space-y-5 px-5">
+                    <p>
+                        PAMA is not a denomination. It is a fellowship. We are composed of many denominations, desiring
+                        primarily to grow in covenant with one another. Therefore, each ministry participates under the
+                        directions of God, with the goal of being a blessing to all families on the earth. <span className="font-bold">(Genesis 12:1-3)</span>
+                    </p>
+
+                    <p>There are no governing bodies to report to or fear. There are no investigations or disciplinary actions
+                        to consider. PAMA is not interested in overseeing a church or outreach ministry. Each ministry must
+                        stand before God on it's own. Our goal is to complement your assignment by making our expertise available
+                        to you. We take a more active role only by request
+                    </p>
+                </div>
+
+                <div className="py-5 bg-gray-500 h-72">
+                    <p>slider</p>
+                </div>
+
+                {/* Exlusive membership */}
+                <div className="flex flex-col items-center pt-8 px-5 justify-center">
+                    <p className="font-light text-sm">EXCLUSIVE MEMBERSHIP</p>
+                    <p className="font-bold pb-5">When you join as a member</p>
+                    <p className="text-center text-sm">Our goal is to complement your assignment by making our expertise available to you. We take a more active role only
+                        by request. The requirements for joining PAMA are minimal.
+                    </p>
+                </div>
+
+                <Benefits showBg={false} />
+            </div>
+
+            {/* why to joing */}
+            <div className="primaryColor px-5 pt-8 flex flex-col items-center">
+                <p className="font-light">WITH YOUR MEMBERSHIP</p>
+                <p className="font-bold">You get extensive benefits</p>
+                <p className="py-5 text-center">
+                    The journey towards spiritual maturity in Christ can become long and lonely. As a member,
+                    you are reminded in a variety of ways that God is your source of prosperity and divine love!
+                </p>
+                <div className='grid grid-cols-1 space-y-6 py-5'>
+                    {
+                        benefits.map(benefit => (
+                            <div key={benefit.title} className='flex flex-col items-center justify-center'>
+                                <p className='py-2'>{benefit.icon}</p>
+                                <p className='pb-4'>{benefit.title}</p>
+                                <p className='text-center'>{benefit.description}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            {/* members directory */}
+            <div className="py-8 px-5">
+                <div className="flex items-center pb-8 justify-between">
+                    <hr className="h-1 rounded-lg bg-gray-500 w-16" />
+                    <p className="text-sm">MEMBERS DIRECTORY</p>
+                    <hr className="h-1 rounded-lg bg-gray-500 w-16" />
+                </div>
+
+                <p>At the center of of PAMA is our staff who considers it a privilege to carry out the
+                    vision of Prophet Asante by serving the ministries and organizations that are connected to them.
+                    The atmosphere in the office is one of genuine love and care, with the focus of maximizing visions
+                </p>
+
+                <div className="grid grid-cols-1 space-y-5 mt-8">
+                    {
+                        [1, 2].map(staff => <StaffCard key={staff}/>)
+                    }
+                </div>
+            </div>
+
+            {/* become a member */}
+            <div className="p-8 bg-gray-500 flex space-y-6 flex-col items-center justify-center">
+                <p className="font-bold">How to become a member</p>
+                <p className="text-center">Joining PAMA is easy. Our goal is to serve you by helping to maximize the vision of your ministry.
+                    Below is a list of requirements to join this dynamic organization
+                </p>
+
+                <hr className="h-1 bg-gray-700 w-24 rounded-lg" />
+
+                {/* requirements */}
+                <div>
+                    <p className="text-center">Please ensure you have the below items ready before applying online</p>
+                    <ul>
+                        {items.map(item => <ListItem item={item} key={item} />)}
+                    </ul>
+                </div>
+
+                {/* apply now */}
+                <div>
+                    <button className="text-xs py-2 px-8 primaryColor">APPLY NOW</button>
+                </div>
+            </div>
+
+            <Footer />
+        </div>
+    )
+}
+
+export default Join
