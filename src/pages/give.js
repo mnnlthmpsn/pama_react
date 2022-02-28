@@ -12,7 +12,7 @@ const Give = () => {
             <form className="grid w-full space-y-3 grid-cols-1" onSubmit={submitGiving}>
                 <TextInput label='Name' />
                 <TextInput label='Payment method' />
-                <TextInput label='Amount' />
+                 
                 <TextInput label='Phone Number' />
                 <Button label='Give' type='submit' />
             </form>

@@ -89,7 +89,7 @@ const PAMA = () => {
                 </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

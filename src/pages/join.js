@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { Benefits, StaffCard, ListItem, Footer} from "../components/components"
+import { Benefits, StaffCard, ListItem, KCarousel, Footer } from "../components/components"
 
 const Join = () => {
 
@@ -7,13 +7,17 @@ const Join = () => {
 
     const apply = () => navigate('/apply')
 
+    const staffList = [
+        { name: 'Emmanuel Thompson', role: 'Sercretary', image: 'https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' }
+    ]
+
     const benefits = [
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
-        { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/957/957980.png', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
     ]
 
     const items = [
@@ -29,7 +33,7 @@ const Join = () => {
 
     return (
         <div className="flex flex-col">
-            <div className="w-full bg-gray-500 text-white h-auto px-8 py-16 flex flex-col items-center">
+            <div className="w-full bg-gray-500 text-white h-auto px-8 py-16 flex flex-col items-center bg-cover bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1543702404-38c2035462ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJheWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')]">
                 <p className="pb-5 text-lg font-light ">Join the <span className="font-bold">Family</span></p>
                 <button className="outline-none mb-24 font-semibold uppercase text-xs py-2 px-8 border" onClick={apply}>Become a Member</button>
                 <div className="text-xs flex flex-col items-center">
@@ -57,8 +61,8 @@ const Join = () => {
                     </p>
                 </div>
 
-                <div className="py-5 bg-gray-500 h-72">
-                    <p>slider</p>
+                <div className="my-8 h-72">
+                    <KCarousel />
                 </div>
 
                 {/* Exlusive membership */}
@@ -85,7 +89,7 @@ const Join = () => {
                     {
                         benefits.map(benefit => (
                             <div key={benefit.title} className='flex flex-col items-center justify-center'>
-                                <p className='py-2'>{benefit.icon}</p>
+                                <img src={benefit.icon} className='py-2 h-20 w-auto' />
                                 <p className='pb-4'>{benefit.title}</p>
                                 <p className='text-center'>{benefit.description}</p>
                             </div>
@@ -109,13 +113,13 @@ const Join = () => {
 
                 <div className="grid grid-cols-1 space-y-5 mt-8">
                     {
-                        [1, 2].map(staff => <StaffCard key={staff}/>)
+                        staffList.map(staff => <StaffCard key={staff.name} staff={staff} />)
                     }
                 </div>
             </div>
 
             {/* become a member */}
-            <div className="p-8 bg-gray-500 flex space-y-6 flex-col items-center justify-center">
+            <div className="p-8 bg-gray-400 text-white flex space-y-6 flex-col items-center justify-center">
                 <p className="font-bold">How to become a member</p>
                 <p className="text-center">Joining PAMA is easy. Our goal is to serve you by helping to maximize the vision of your ministry.
                     Below is a list of requirements to join this dynamic organization
@@ -137,7 +141,7 @@ const Join = () => {
                 </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
