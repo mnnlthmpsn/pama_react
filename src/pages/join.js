@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import { Benefits, StaffCard, ListItem, Footer} from "../components/components"
 
 const Join = () => {
+
+    const navigate = useNavigate()
+
+    const apply = () => navigate('/apply')
 
     const benefits = [
         { icon: 'icon', title: 'MEMBERSHIP', description: 'Bringing Ministers together in a covenant relationship to serve one another and maximize the visions of the individual ministries' },
@@ -26,7 +31,7 @@ const Join = () => {
         <div className="flex flex-col">
             <div className="w-full bg-gray-500 text-white h-auto px-8 py-16 flex flex-col items-center">
                 <p className="pb-5 text-lg font-light ">Join the <span className="font-bold">Family</span></p>
-                <button className="outline-none mb-24 font-semibold uppercase text-xs py-2 px-8 border">Become a Member</button>
+                <button className="outline-none mb-24 font-semibold uppercase text-xs py-2 px-8 border" onClick={apply}>Become a Member</button>
                 <div className="text-xs flex flex-col items-center">
                     <p>UNDERSTANDING <span className='font-bold'>GRACE</span></p>
                     <p>EMPOWERING <span className='font-bold'>CHANGE</span></p>
@@ -128,7 +133,7 @@ const Join = () => {
 
                 {/* apply now */}
                 <div>
-                    <button className="text-xs py-2 px-8 primaryColor">APPLY NOW</button>
+                    <button className="text-xs py-2 px-8 primaryColor" onClick={apply}>APPLY NOW</button>
                 </div>
             </div>
 
