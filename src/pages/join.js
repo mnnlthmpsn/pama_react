@@ -31,14 +31,22 @@ const Join = () => {
         'ANNUAL MEMBERSHIP FEE OF GHS 250.00'
     ]
 
+    const goBack = () => navigate(-1)
+
     return (
         <div className="flex flex-col">
             <div className="w-full bg-gray-500 text-white h-auto px-8 py-16 flex flex-col items-center bg-cover bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1543702404-38c2035462ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJheWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')]">
                 <p className="pb-5 text-lg font-light ">Join the <span className="font-bold">Family</span></p>
-                <button className="outline-none mb-24 font-semibold uppercase text-xs py-2 px-8 border" onClick={apply}>Become a Member</button>
-                <div className="text-xs flex flex-col items-center">
+                <button className="outline-none mb-24 font-semibold uppercase text-sm py-2 px-8 border" onClick={apply}>Become a Member</button>
+                <div className="text-sm flex flex-col items-center">
                     <p>UNDERSTANDING <span className='font-bold'>GRACE</span></p>
                     <p>EMPOWERING <span className='font-bold'>CHANGE</span></p>
+                </div>
+
+                <div className="flex items-center justify-center bg-white w-8 h-8 rounded-full absolute top-5 left-5" onClick={goBack}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
                 </div>
             </div>
 
@@ -137,7 +145,7 @@ const Join = () => {
 
                 {/* apply now */}
                 <div>
-                    <button className="text-xs py-2 px-8 primaryColor" onClick={apply}>APPLY NOW</button>
+                    <button className="text-sm py-3 px-8 primaryColor" onClick={apply}>APPLY NOW</button>
                 </div>
             </div>
 

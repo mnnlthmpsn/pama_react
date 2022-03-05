@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/ProductSansRegular.ttf'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/ProductSansRegular.ttf') format('ttf'), /* Super Modern Browsers */
+         url('./fonts/ProductSansRegular.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+  
+
 html {
-    @apply text-[#24222E] bg-[#F3F5F6] text-sm
+    @apply text-[#24222E] bg-[#F3F5F6] text-sm font-sans
 }
 
 .bgColor {
@@ -31,4 +42,16 @@ html {
 
 .container {
     @apply px-6
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
