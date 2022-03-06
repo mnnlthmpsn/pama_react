@@ -14,7 +14,7 @@
   
 
 html {
-    @apply text-[#24222E] bg-[#F3F5F6] text-sm font-sans
+    @apply text-[#24222E] bg-[#F3F5F6] text-sm font-sans select-none
 }
 
 .bgColor {
