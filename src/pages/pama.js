@@ -17,7 +17,7 @@ const PAMA = () => {
                 <p className="text-lg font-light">Prophet Asante Ministerial</p>
                 <p className="text-lg font-light">Association</p>
                 <div className="py-8">
-                    <button className="text-sm py-2 outline-none px-20 primaryColor" onClick={() => navigate('/join')}>JOIN</button>
+                    <button className="text-sm py-3 outline-none px-20 primaryColor" onClick={() => navigate('/join')}>JOIN</button>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ const PAMA = () => {
                     <hr className='w-16 h-1 rounded-lg bg-gray-600' />
                 </div>
 
-                <p className='text-center text-xs font-semibold'>By touching hearts, proclaiming Christ and empowering through grace, we become one in
+                <p className='text-center text-sm font-semibold'>By touching hearts, proclaiming Christ and empowering through grace, we become one in
                     unity with Christ</p>
 
                 {/* members card */}

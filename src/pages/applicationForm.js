@@ -1,10 +1,23 @@
 import { TextInput, Button } from "../components/components"
 import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from "react-router-dom";
 
 const ApplicationForm = () => {
+
+    const navigate = useNavigate()
+
+    const goBack = () => navigate(-1)
+
     return (
         <div className="h-auto bgColor w-screen flex flex-col">
-            <p className="p-8 text-lg font-semibold">Application Form</p>
+            <div className="flex items-center pl-8">
+                <div className="flex items-center justify-center bg-gray-500 w-8 h-8 rounded-full" onClick={goBack}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                </div>
+                <p className="p-8 text-lg font-semibold">Application Form</p>
+            </div>
             <form className="space-y-5 px-8 pb-12">
                 <p>Ministry Information</p>
 

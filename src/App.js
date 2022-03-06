@@ -3,7 +3,7 @@ import { Give, PAMA, Join, ApplicationForm } from './pages/pages'
 
 const App = () => {
     return (
-        <div className='h-screen w-screen bgColor'>
+        <div className='h-auto w-screen flex justify-center  bgColor'>
             <Routes>
                 <Route path="apply" element={<ApplicationForm />} />
                 <Route path="give" element={<Give />} />
