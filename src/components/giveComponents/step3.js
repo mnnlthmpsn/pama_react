@@ -36,6 +36,15 @@ const Momo = ({ makePayment }) => {
                     </div>
                 </div>
 
+                <div className="space-y-2 flex flex-col col-span-2">
+                    <label>Network</label>
+                    <select className="bg-transparent border py-3 px-4 outline-none">
+                        <option value='mtn'>MTN</option>
+                        <option value='vod'>Vodafone</option>
+                        <option value='air'>AirtelTigo</option>
+                    </select>
+                </div>
+
                 <div className="space-y-2 col-span-2">
                     <label>Email</label>
                     <div className="flex items-center">
