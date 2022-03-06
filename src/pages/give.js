@@ -86,7 +86,7 @@ const Give = () => {
                 </div>
             </div>
 
-            <div className='h-auto p-10 w-full border'>
+            <div className='h-auto py-10 px-5 w-full border'>
                 {currentStep === 1 && (<Step1 setCurrentStep={setCurrentStep}/>)}
                 {currentStep === 2 && (<Step2 setCurrentStep={setCurrentStep} />)}
                 {currentStep === 3 && (<Step3 paymentType={paymentType} makePayment={ makePayment } />)}
