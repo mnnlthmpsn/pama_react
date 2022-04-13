@@ -14,7 +14,7 @@
   
 
 html {
-    @apply text-[#24222E] bg-[#F3F5F6] font-sans select-none
+    @apply text-[#24222E] font-sans select-none
 }
 
 .bgColor {
@@ -37,7 +37,7 @@ html {
 }
 
 .form-control {
-    @apply bg-[#E2E7E7] text-[#7B7B7C] outline-none w-full p-4 rounded-lg
+    @apply focus:border-b-2 border-red-500 outline-none w-full px-4 py-3 border-b duration-150
 }
 
 .container {
