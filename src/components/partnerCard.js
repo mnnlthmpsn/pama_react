@@ -9,8 +9,8 @@ const PartnerCard = () => {
           <p className="font-semibold">$</p>
           <p className="font-bold text-6xl"> 300</p>
         </div>
-        <p className="text-red-500 pb-2 font-semibold">Every month</p>
-        <p className="pb-16">Partnership</p>
+        <p className="text-red-500 pb-2 font-semibold text-lg">Every month</p>
+        <p className="pb-16 text-lg">Partnership</p>
         <div className="px-8 w-full">
           <button className="italic text-sm border py-3 text-white bg-[#AA9055] w-full">
             Sign Up Here

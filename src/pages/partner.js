@@ -18,7 +18,7 @@ const Partner = () => {
 
       <div>
         <div className="p-6">
-          <p className="pb-8 text-2xl">Are you already a partner? Login Now</p>
+          <p className="pb-8 text-xl">Are you already a partner? Login Now</p>
           <LoginForm />
         </div>
       </div>
