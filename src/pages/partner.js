@@ -3,19 +3,9 @@ import { PartnerCard, TextInput, Button } from "../components/components";
 const Partner = () => {
   return (
     <div className="w-screen h-screen">
-      <div className="h-80 text-white text-5xl bg-hero">
-        <div className="absolute bg-red-500 h-80 w-screen bg-opacity-50 flex items-center justify-center">
-          Partnership
-        </div>
-      </div>
-      <div>
-        <div className="p-6">
-          <p className="pb-8 text-2xl">Are you already a partner? Login Now</p>
-          <LoginForm />
-        </div>
-      </div>
-      <div className="bg-partner h-56 bg-top bg-no-repeat bg-cover">
-        <div className="absolute h-56 bg-opacity-50 bg-blue-800 w-full flex flex-col text-white space-y-2 items-center p-5 justify-center">
+      
+      <div className="bg-partner h-80 bg-top bg-no-repeat bg-cover">
+        <div className="absolute h-80 bg-opacity-50 bg-blue-800 w-full flex flex-col text-white space-y-2 items-center p-5 justify-center">
           <p className="text-lg">BECOME A</p>
           <p className="text-6xl">Partner</p>
           <p className="text-2xl">
@@ -25,6 +15,13 @@ const Partner = () => {
       </div>
       <PartnerShipReason />
       <Subscriptions />
+
+      <div>
+        <div className="p-6">
+          <p className="pb-8 text-2xl">Are you already a partner? Login Now</p>
+          <LoginForm />
+        </div>
+      </div>
     </div>
   );
 };
