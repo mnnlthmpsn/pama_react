@@ -17,8 +17,9 @@ const Partner = () => {
       <Subscriptions />
 
       <div>
-        <div className="p-6">
-          <p className="pb-8 text-xl">Are you already a partner? Login Now</p>
+        <div className="p-6 font-bold">
+          <p className="pb-8 text-xl">Are you already a partner?</p>
+          <p className="pb-8 text-lg">Login</p>
           <LoginForm />
         </div>
       </div>
