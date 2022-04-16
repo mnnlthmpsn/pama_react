@@ -10,18 +10,18 @@ const PartnerCard = () => {
           <p className="font-bold text-6xl"> 300</p>
         </div>
         <p className="text-red-500 pb-2 font-semibold text-lg">Every month</p>
-        <p className="pb-16 text-lg">Partnership</p>
-        <div className="px-8 w-full">
-          <button className="italic text-sm border py-3 text-white bg-[#AA9055] w-full">
-            Sign Up Here
-          </button>
-        </div>
+        <p className="text-lg">Partnership</p>
       </div>
       <div className="px-10 py-2">
         {[1, 2, 3, 4, 5].map((item, i) => (
           <p className={`py-2 ${i < 4 && 'border-b'} text-lg font-thin text-center px-2`}>20% discount from the mission field</p>
         ))}
       </div>
+      <div className="px-8 py-8 w-full">
+          <button className="italic text-sm border py-3 text-white bg-[#AA9055] w-full">
+            Sign Up Here
+          </button>
+        </div>
     </div>
   );
 };
