@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PartnerCard, TextInput, Button } from "../components/components";
 
 const Partner = () => {
@@ -9,10 +10,10 @@ const Partner = () => {
         </div>
       </div>
       <div className="p-6">
-          <p className="text-xl">Are you already a partner?</p>
-          <p className="pb-8 text-xl font-semibold">Login Now</p>
-          <LoginForm />
-        </div>
+        <p className="text-xl">Are you already a partner?</p>
+        <p className="pb-8 text-xl font-semibold">Login Now</p>
+        <LoginForm />
+      </div>
       <div className="bg-partner h-80 bg-top bg-no-repeat bg-cover">
         <div className="absolute h-80 bg-opacity-50 bg-blue-800 w-full flex flex-col text-white space-y-2 items-center p-5 justify-center">
           <p className="text-lg">BECOME A</p>
@@ -42,13 +43,22 @@ const LoginForm = () => {
 };
 
 const PartnerShipReason = () => {
+  const [active, setActive] = useState("1");
+
   return (
-    <div className="p-6 space-y-10">
+    <div className="p-6 space-y-1">
       <div className="space-y-2">
-        <p className="text-xl font-semibold">
-          The Purpose of Partnering with us...
+        <p
+          className="text-xl font-semibold border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
+          onClick={() => setActive("1")}
+        >
+          Benefits
         </p>
-        <p className="text-lg">
+        <p
+          className={`text-lg duration-300 ${
+            active === "1" ? "opacity-100" : "opacity-0 h-0"
+          }`}
+        >
           The vision of this ministry is to use every channel available to bring
           hope to people all over the world, to make a difference in the lives
           of those we touch with the transforming healing power of Christ. To
@@ -63,8 +73,42 @@ const PartnerShipReason = () => {
         </p>
       </div>
       <div className="space-y-2">
-        <p className="text-xl font-semibold">You're a world healer...</p>
-        <p className="text-lg">
+        <p
+          className="text-xl font-semibold border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
+          onClick={() => setActive("2")}
+        >
+          Why Partner?
+        </p>
+        <p
+          className={`text-lg duration-300 ${
+            active === "2" ? "opacity-100" : "opacity-0 h-0"
+          }`}
+        >
+          As a World Healer, you partner with Pastor Ed and the Holy Spirit to
+          heal the nations. Your heart and hands are joined with them by praying
+          and financially supporting Ed Citronnelli Ministries each month. The
+          amount of your giving is between you and God. Giving is meant to be an
+          expression of your love and commitment to advancing the kingdom of
+          God. A World Healer is someone who is an extension of the healing
+          hands of Jesus Christ and a hero who comes to the rescue of those in
+          need. In our world today we need healers. People need hope and
+          healing, they need to discover the miracle of a personal relationship
+          with Jesus Christ
+        </p>
+      </div>
+
+      <div className="space-y-2">
+        <p
+          className="text-xl font-semibold border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
+          onClick={() => setActive("3")}
+        >
+          Pastor's Fellowship
+        </p>
+        <p
+          className={`text-lg duration-300 ${
+            active === "3" ? "opacity-100" : "opacity-0 h-0"
+          }`}
+        >
           As a World Healer, you partner with Pastor Ed and the Holy Spirit to
           heal the nations. Your heart and hands are joined with them by praying
           and financially supporting Ed Citronnelli Ministries each month. The
@@ -81,16 +125,18 @@ const PartnerShipReason = () => {
   );
 };
 
-
 const Subscriptions = () => {
-    return(
-        <div className="bg-[#AA9055] p-6 space-y-6">
-            <p className="text-lg text-white">By Sowing and partnering with Prophet Asante and the Holy Spirit, you will become a:</p>
-            <div className="grid gap-5">
-                {
-                    [1, 2, 3, 4].map(item => <PartnerCard />)
-                }
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="bg-[#AA9055] p-6 space-y-6">
+      <p className="text-lg text-white">
+        By Sowing and partnering with Prophet Asante and the Holy Spirit, you
+        will become a:
+      </p>
+      <div className="grid gap-5">
+        {[1, 2, 3, 4].map((item) => (
+          <PartnerCard />
+        ))}
+      </div>
+    </div>
+  );
+};
