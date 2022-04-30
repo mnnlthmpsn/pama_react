@@ -29,7 +29,7 @@ const Give = () => {
                     <img src='https://images.unsplash.com/photo-1506755594592-349d12a7c52a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3Jvd2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' className="h-32 w-full object-cover object-center" alt="" />
                 </div>
 
-                <div className='py-8 grid grid-cols-3 w-full px-2 lg:px-32 gap-1 lg:gap-4'>
+                <div className='py-8 grid grid-cols-3 w-full px-2 lg:px-32 gap-2 lg:gap-4'>
                     {
                         payMeds.map((med, i) => (
                             <div onClick={() => setActive(i)}>
