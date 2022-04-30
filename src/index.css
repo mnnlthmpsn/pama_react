@@ -11,6 +11,8 @@
          url('./fonts/ProductSansRegular.ttf') format('ttf'), /* Super Modern Browsers */
          url('./fonts/ProductSansRegular.ttf') format('truetype'), /* Safari, Android, iOS */
   }
+
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
   
 
 html {
