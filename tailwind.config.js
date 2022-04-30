@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        '0.4': '0.8px'
+      },
       fontFamily: {
         sans: ['Product Sans']
       },
