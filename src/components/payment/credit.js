@@ -16,7 +16,7 @@ export const CreditCard = () => {
 
                     <div>
                         <label htmlFor="name" className="text-sm">Expiry Date</label>
-                        <input type="text" className="form-control" placeholder="yyyy-mm-dd"/>
+                        <input type="date" className="form-control" placeholder="yyyy-mm-dd"/>
                     </div>
                 </div>
 
