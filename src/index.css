@@ -39,7 +39,7 @@ html {
 }
 
 .form-control {
-    @apply focus:border-b-2 border-red-500 outline-none w-full px-4 py-2 border-b duration-150
+    @apply focus:border-b-2 border-red-500 outline-none w-full px-4 py-3 border-b duration-150
 }
 
 .container {
