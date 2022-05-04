@@ -54,9 +54,9 @@ export default Give
 
 const Card = ({ crd, index, active }) => {
     return (
-        <div className={`cursor-pointer relative border rounded-lg p-8 flex flex-col items-center duration-300 h-44 lg:h-56 group ${active === index ? 'border-red-500' : 'bg-gray-100'}`}>
-            <img src={crd.image} className='py-2 lg:pb-3' />
-            <p className='text-center font-semibold text-sm'>{crd.title}</p>
+        <div className={`cursor-pointer relative border rounded-lg p-8 flex flex-col items-center duration-300 h-44 lg:h-56 group ${active === index ? 'border-red-500' : 'bg-gray-50 border-gray-400'}`}>
+            <img src={crd.image} className='h-40 object-contain ' />
+            <p className='text-center text-sm'>{crd.title}</p>
             <div className={
                 `absolute mx-10 group-hover:opacity-100 duration-500 bg-red-400 bottom-5 ${active === index ? 'w-2/3 h-0.5' : 'h-0.4 w-14 opacity-0'}`
             }></div>
