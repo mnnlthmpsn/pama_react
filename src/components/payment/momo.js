@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react"
 import { ArrowLeftIcon } from '@heroicons/react/solid'
+import { Dropdown } from "../dropdown"
 
 export const Momo = ({ setShow }) => {
+
+    const nw = [
+        { key: "MTN", val: 'mtn' },
+        { key: "Vodafone", val: 'vod' },
+        { key: "AirtelTigo", val: 'airtel_tigo' },
+    ]
+
     return (
         <div className="pb-24 flex flex-col">
-            <div className="flex justify-start pb-2">
-            <ArrowLeftIcon className="h-5 w-5 text-gray-800" onClick={setShow(true)} />
+            <div className="flex justify-start pb-6">
+                <ArrowLeftIcon className="h-4 w-auto text-gray-800" onClick={setShow(true)} />
             </div>
             <div>
                 <div className="pt-2">
@@ -17,15 +25,10 @@ export const Momo = ({ setShow }) => {
                     <input type="text" className="form-control" />
                 </div>
                 <div className="pt-8">
-                    <label htmlFor="">Choose Network</label>
-                    <select htmlFor="" className="form-control">
-                        <option value="MTN">MTN</option>
-                        <option value="VOD">Vodafone</option>
-                        <option value="AIR">Airtel</option>
-                    </select>
+                    <Dropdown label="Network" options={nw} />
                 </div>
                 <div className="pt-6">
-                    <button className="text-sm py-3 outline-none px-20 primaryColor w-full">Give Now</button>
+                    <button className="btn-primary">Give Now</button>
                 </div>
             </div>
         </div>

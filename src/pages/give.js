@@ -9,6 +9,7 @@ import paypal from '../images/paypal.png'
 import { Momo } from '../components/payment/momo'
 import { CreditCard } from '../components/payment/credit'
 import { Paypal } from '../components/payment/paypal'
+import { Dropdown } from '../components/dropdown'
 
 const Give = () => {
 
@@ -27,6 +28,16 @@ const Give = () => {
         { title: 'Mobile Money', image: momo },
         { title: 'Debit/Credit Card', image: card },
         { title: 'Paypal', image: paypal },
+    ]
+
+    const currencies = [
+        { key: 'Euro' },
+        { key: 'USD' },
+        { key: 'GHS' },
+        { key: 'Candadian Dollar' },
+        { key: 'Pounds' },
+        { key: 'Rands' },
+        { key: 'Naira' },
     ]
 
     const navigate = i => {
@@ -57,21 +68,19 @@ const Give = () => {
                 </div>
 
                 {/* body */}
-                <div className='px-6 lg:px-32 font-semibold text-gray-700'>
+                <div className='px-6 lg:px-32 pb-10 text-gray-700'>
 
                     {show && active !== 2 && (
                         <div>
-                            <select name="" className="w-full border rounded p-2 mb-6 outline-none" onChange={e => getRates(e.target.value)}>
-                                <option value="EUR">EUR</option>
-                                <option value="USD">USD</option>
-                                <option value="GHS">GHS</option>
-                            </select>
+                            <div className="mb-5">
+                                <Dropdown options={currencies} />
+                            </div>
                             <form className="lg:border rounded lg:p-5 space-y-4">
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Tithe</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-3 py-2 border-r bg-gray-100">$</p>
+                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
                                         <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -79,7 +88,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Offerings</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-3 py-2 border-r bg-gray-100">$</p>
+                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
                                         <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -87,22 +96,37 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Donation</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-3 py-2 border-r bg-gray-100">$</p>
+                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
                                         <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
-                                    <div className="col-span-1">total</div>
-                                    <div className="items-center flex rounded col-span-2">
-                                        <p className="px-3 py-2 bg-gray-100">$</p>
+                                    <div className="col-span-1">Seed</div>
+                                    <div className="border flex rounded col-span-2">
+                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
+                                        <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-4 items-center">
+                                    <div className="col-span-1">Total</div>
+                                    <div className="items-center flex space-x-4 h-full rounded col-span-2">
+                                        <p className="px-5 py-2 bg-gray-100">$</p>
                                         <p className='text-green-500'>5.00</p>
                                         {/* <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" /> */}
                                     </div>
                                 </div>
 
-                                <div className="pt-4">
-                                    <button className="text-sm py-3 outline-none px-20 primaryColor w-full" onClick={() => setShow(!show)}>Next</button>
+                                <div className="pt-5 text-sm flex space-between items-center space-x-5">
+                                    <p>Payment method:</p>
+                                    {   active === 0 
+                                        ? <img src={momo} alt="momo" className='h-10 w-auto'/> 
+                                        : <img src={card} alt="card" className='h-10 w-auto'/> 
+                                    }
+                                </div>
+                                <div className="pb-5">
+                                    <button className="btn-primary" onClick={() => setShow(!show)}>Next</button>
                                 </div>
                             </form>
                         </div>

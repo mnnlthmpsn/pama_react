@@ -46,6 +46,10 @@ html {
     @apply px-6
 }
 
+.btn-primary {
+    @apply text-sm py-3 rounded-md outline-none px-20 primaryColor w-full
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
