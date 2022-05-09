@@ -145,7 +145,7 @@ export default Give
 
 const Card = ({ crd, index, active }) => {
     return (
-        <div className={`cursor-pointer font-semibold relative border rounded-lg p-8 flex flex-col items-center duration-300 h-44 lg:h-56 group ${active === index ? 'border-red-500' : 'bg-gray-50 border-gray-400'}`}>
+        <div className={`cursor-pointer font-semibold relative border rounded-lg p-8 flex flex-col items-center duration-300 h-44 lg:h-56 group ${active === index ? 'border-red-500' : 'border-gray-400'}`}>
             <img src={crd.image} className='h-60 object-contain ' />
             <p className='text-center text-sm'>{crd.title}</p>
             <div className={
