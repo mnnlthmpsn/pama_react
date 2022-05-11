@@ -10,7 +10,6 @@ const Shop = () => {
 
     return (
         <div className="p-6">
-            <p className='pb-5'>Browse our Catalog</p>
             <div className="grid gap-8 w-full">
                 {items.map(item => <ShopCard item={item} />)}
             </div>
@@ -27,7 +26,7 @@ const ShopCard = ({ item }) => {
             <p className='text-gray-500 text-xs font-light'>{item.category}</p>
             <p className='text-xl pb-3 pt-1'>{item.title}</p>
             <div>
-                <button className="rounded-lg primaryColor w-auto px-6 py-2">Buy Now</button>
+                <button className="rounded-lg primaryColor w-auto px-6 py-3">Buy Now</button>
             </div>
         </div>
     )
