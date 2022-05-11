@@ -31,14 +31,17 @@ const Give = () => {
         { title: 'Paypal', image: paypal },
     ]
 
-    const currencies = [
+    const foreign_currencies = [
         { key: 'Euro' },
         { key: 'USD' },
-        { key: 'GHS' },
         { key: 'Candadian Dollar' },
         { key: 'Pounds' },
         { key: 'Rands' },
         { key: 'Naira' },
+    ]
+
+    const loc_currencies = [
+        { key: 'GHS' }
     ]
 
     const navigate = i => {
@@ -72,7 +75,7 @@ const Give = () => {
                     {show && active !== 2 && (
                         <div>
                             <div className="mb-5">
-                                <Dropdown options={currencies} />
+                                <Dropdown options={active === 0 ? loc_currencies : foreign_currencies} />
                             </div>
                             <form className="lg:border rounded lg:p-5 space-y-4">
 
