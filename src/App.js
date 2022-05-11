@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Give, PAMA, Join, ApplicationForm, Partner, Shop, Index } from './pages/pages'
+import { Give, PAMA, Join, ApplicationForm, Partner, Shop, Index, ItemDetails } from './pages/pages'
 
 const App = () => {
     return (
@@ -11,6 +11,7 @@ const App = () => {
                 <Route path="pama" element={<PAMA />} />
                 <Route path="partner" element={<Partner />} />
                 <Route path="shop" element={<Shop />} />
+                <Route path="shop/:index" element={<ItemDetails />} />
                 <Route path="join" element={<Join />} />
             </Routes>
         </div>
