@@ -1,13 +1,19 @@
-import { useParams } from "react-router-dom"
+import { ChevronLeftIcon } from "@heroicons/react/solid"
+import { useNavigate, useParams } from "react-router-dom"
 import obey from '../images/obey.jpg'
 import { items } from "./shop"
 
 const ItemDetails = () => {
 
     const { index } = useParams()
+    const router = useNavigate()
 
     return (
         <div className="p-6">
+
+            <div className="absolute rounded-full border left-3 bg-white shadow" onClick={() => router(-1)}>
+                <ChevronLeftIcon className="h-6" />
+            </div>
             <div className="rounded-lg shadow-lg">
                 <img src={obey} className="rounded-lg py-8 px-2" alt="" />
             </div>
