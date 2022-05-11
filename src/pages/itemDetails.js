@@ -9,7 +9,7 @@ const ItemDetails = () => {
     return (
         <div className="p-6">
             <div className="rounded-lg shadow-lg">
-                <img src={obey} alt="" />
+                <img src={obey} className="rounded-lg py-8 px-2" alt="" />
             </div>
             <div className="grid grid-cols-4 p-6 gap-5">
                 {[1, 2, 3, 4].map(img => <img src={obey} className="border p-1 rounded bg-white shadow-sm" alt="" key={img} />)}
