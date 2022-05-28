@@ -7,7 +7,7 @@ const Checkout = () => {
     const router = useNavigate()
 
     return (
-        <div className="flex flex-col px-8 pt-8 pb-56 overflow-x-hidden">
+        <div className="flex flex-col px-8 pt-8 overflow-x-hidden">
             <div className="flex justify-start" onClick={() => router(-1)}>
                 <ChevronLeftIcon className="h-10 mb-4 border rounded-full p-2" />
             </div>

@@ -127,7 +127,7 @@ const PartnerShipReason = () => {
 
 const Subscriptions = () => {
   return (
-    <div className="bg-[#AA9055] p-6 space-y-6 pb-56">
+    <div className="bg-[#AA9055] p-6 space-y-6">
       <p className="text-lg text-white">
         By Sowing and partnering with Prophet Asante and the Holy Spirit, you
         will become a:
