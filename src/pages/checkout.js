@@ -22,7 +22,7 @@ const Checkout = () => {
                 <label htmlFor="date_picker">Start Date</label>
                 {/* <input type="date" className="px-3 py-2 border-2 border" /> */}
                 <FlatPickr 
-                className="px-3 py-2 outline-none border"
+                className="px-3 py-2 outline-none border w-full bg-white"
                     value={date}
                     onchange={([ date ]) => setDate(date)}
                 />
