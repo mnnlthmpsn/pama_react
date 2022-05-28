@@ -1,10 +1,13 @@
 import { ChevronLeftIcon } from "@heroicons/react/solid"
 import { useNavigate } from "react-router-dom"
 import { Button } from '../components/components'
+import FlatPickr from 'react-flatpickr'
+import { useState } from "react"
 
 const Checkout = () => {
 
     const router = useNavigate()
+    const [ date, setDate ] = useState(() => new Date())
 
     return (
         <div className="flex flex-col px-8 pt-8 overflow-x-hidden">
@@ -17,7 +20,12 @@ const Checkout = () => {
             {/* date picker */}
             <div className="flex flex-col space-y-2 pb-3 font-light">
                 <label htmlFor="date_picker">Start Date</label>
-                <input type="date" className="px-3 py-2 border-2 border" />
+                {/* <input type="date" className="px-3 py-2 border-2 border" /> */}
+                <FlatPickr 
+                className="px-3 py-2 outline-none border"
+                    value={date}
+                    onchange={([ date ]) => setDate(date)}
+                />
             </div>
 
             <div className="flex items-center justify-between font-light">
