@@ -1,22 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Product Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/ProductSansRegular.ttf'); /* IE9 Compat Modes */
-    src: local(''),
-         url('./fonts/ProductSansRegular.ttf') format('ttf'), /* Super Modern Browsers */
-         url('./fonts/ProductSansRegular.ttf') format('truetype'), /* Safari, Android, iOS */
-  }
 
-* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-  
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 
 html {
-    @apply text-[#24222E] font-sans select-none bg-white
+    @apply text-[#24222E] bg-white
 }
 
 .bgColor {
@@ -30,6 +28,7 @@ html {
 .textDark {
     @apply text-[#434A53]
 }
+
 .primaryColor {
     @apply bg-[#FF0000] text-white
 }
@@ -53,11 +52,11 @@ html {
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }

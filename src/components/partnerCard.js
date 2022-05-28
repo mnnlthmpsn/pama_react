@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const PartnerCard = () => {
+
+  const router = useNavigate()
+  const toCheckout = () => router('/checkout')
+
   return (
     <div className="border shadow-xl bg-white w-full">
       <div className="p-6 flex flex-col items-center justify-center border-b border-gray-300 bg-gray-100">
@@ -18,7 +24,7 @@ const PartnerCard = () => {
         ))}
       </div>
       <div className="px-8 py-8 w-full">
-          <button className="italic text-sm border py-3 text-white bg-[#AA9055] w-full">
+          <button className="italic text-sm border py-3 text-white bg-[#AA9055] w-full" onClick={toCheckout}>
             Sign Up Here
           </button>
         </div>

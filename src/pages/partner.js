@@ -35,7 +35,7 @@ const LoginForm = () => {
   return (
     <div className="flex flex-col items-center space-y-5">
       <TextInput label="Username/Email" type="tex" />
-      <TextInput label="password" type="password" />
+      <TextInput label="Password" type="password" />
       <Button label="Login" />
       <p>Forgot Password? </p>
     </div>
@@ -127,7 +127,7 @@ const PartnerShipReason = () => {
 
 const Subscriptions = () => {
   return (
-    <div className="bg-[#AA9055] p-6 space-y-6">
+    <div className="bg-[#AA9055] p-6 space-y-6 pb-56">
       <p className="text-lg text-white">
         By Sowing and partnering with Prophet Asante and the Holy Spirit, you
         will become a:
