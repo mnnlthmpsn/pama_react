@@ -93,6 +93,12 @@ const Checkout = () => {
                             <input type="text" name="first_name" id="last_name" className="form-control2" placeholder="Thompson" />
                         </div>
 
+                        {/* Phone */}
+                        <div className="flex flex-col space-2 items-start">
+                            <label htmlFor="title">Phone</label>
+                            <input type="tel" name="phone" id="phone" className="form-control2" placeholder="054 060 9437" />
+                        </div>
+
                     <div className="flex flex-col space-2 items-start">
                         <label htmlFor="title">Country</label>
                         <select name="title" id="title" className="form-control2" onChange={changeHandler}>
