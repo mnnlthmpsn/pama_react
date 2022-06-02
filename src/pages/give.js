@@ -40,10 +40,6 @@ const Give = () => {
         { key: 'Naira' },
     ]
 
-    const loc_currencies = [
-        { key: 'GHS' }
-    ]
-
     const navigate = i => {
         setActive(i)
         setShow(true)
@@ -62,7 +58,7 @@ const Give = () => {
                 <div className='py-8 grid grid-cols-3 w-full px-2 lg:px-32 gap-2 lg:gap-4'>
                     {
                         payMeds.map((med, i) => (
-                            <div onClick={() => navigate(i)}>
+                            <div onClick={() => navigate(i)} key={i}>
                                 <Card key={i} index={i} active={active} crd={med} />
                             </div>
                         ))
@@ -75,7 +71,7 @@ const Give = () => {
                     {show && active !== 2 && (
                         <div>
                             <div className="mb-5">
-                                <Dropdown options={active === 0 ? loc_currencies : foreign_currencies} />
+                                { active > 0 && <Dropdown options={foreign_currencies} /> }
                             </div>
                             <form className="lg:border rounded lg:p-5 space-y-4">
 

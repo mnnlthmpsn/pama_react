@@ -1,12 +1,17 @@
 import { ChevronLeftIcon } from "@heroicons/react/solid"
 import { useNavigate } from "react-router-dom"
 import FlatPickr from 'react-flatpickr'
-import { useState } from "react"
+import { useMemo, useState } from "react"
+import countryList from "react-select-country-list"
 
 const Checkout = () => {
 
     const router = useNavigate()
     const [date, setDate] = useState(() => new Date())
+    const [country, setCountry] = useState('')
+    const options =  useMemo(() => countryList().getData(), [])
+
+    const changeHandler = e => setCountry(e.target.value)
 
     return (
         <div className="flex flex-col px-8 pt-8 overflow-x-hidden">
@@ -24,7 +29,7 @@ const Checkout = () => {
                 <FlatPickr
                     className="px-3 py-2 outline-none border w-full bg-white"
                     value={date}
-                    onchange={([date]) => setDate(date)}
+                    onChange={([date]) => setDate(date)}
                 />
             </div>
 
@@ -69,35 +74,49 @@ const Checkout = () => {
                     {/* title */}
                     <div className="flex flex-col space-2 items-start">
                         <label htmlFor="title">Title</label>
-                        <select name="title" id="title" className="form-control">
+                        <select name="title" id="title" className="form-control2">
                             <option value="MR">MR</option>
                             <option value="MR">MRS</option>
                             <option value="MR">MISS</option>
                         </select>
                     </div>
 
-                    {/* first name */}
-                    <div className="flex flex-col space-2 items-start">
-                        <label htmlFor="title">First name</label>
-                        <input type="text" name="first_name" id="first_name" className="form-control" />
+                    <div className="grid grid-cols-2 gap-4">
+                        {/* first name */}
+                        <div className="flex flex-col space-2 items-start">
+                            <label htmlFor="title">First name</label>
+                            <input type="text" name="first_name" id="first_name" className="form-control2" placeholder="Emmanuel" />
+                        </div>
+
+                        {/* last name */}
+                        <div className="flex flex-col space-2 items-start">
+                            <label htmlFor="title">Last name</label>
+                            <input type="text" name="first_name" id="last_name" className="form-control2" placeholder="Thompson" />
+                        </div>
                     </div>
 
-                    {/* last name */}
                     <div className="flex flex-col space-2 items-start">
-                        <label htmlFor="title">Last name</label>
-                        <input type="text" name="first_name" id="last_name" className="form-control" />
+                        <label htmlFor="title">Country</label>
+                        <select name="title" id="title" className="form-control2" onChange={changeHandler}>
+                            { options.map((option) => <option value={option.value} key={option.value}>{option.label}</option>) }
+                        </select>
+                    </div>
+
+                    <div className="flex flex-col space-2 items-start">
+                        <label htmlFor="phone">Region</label>
+                        <input type="tel" name="region" id="phone" className="form-control2" placeholder="Region" />
                     </div>
 
                     {/* Phone */}
                     <div className="flex flex-col space-2 items-start">
-                        <label htmlFor="phone">Phone</label>
-                        <input type="tel" name="phone" id="phone" className="form-control" />
+                        <label htmlFor="phone">Town</label>
+                        <input type="tel" name="Town" id="phone" className="form-control2" placeholder="Town" />
                     </div>
 
                     {/* Email */}
                     <div className="flex flex-col space-2 items-start">
                         <label htmlFor="title">Email</label>
-                        <input type="text" name="email" id="email" className="form-control" />
+                        <input type="text" name="email" id="email" className="form-control2" placeholder="Email" />
                     </div>
 
                     <div className="pb-4">
