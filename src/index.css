@@ -42,7 +42,7 @@ html {
 }
 
 .form-control2 {
-    @apply px-3 py-2 outline-none border w-full bg-white
+    @apply p-3 outline-none border w-full bg-white
 }
 
 .container {

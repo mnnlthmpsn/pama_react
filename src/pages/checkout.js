@@ -81,9 +81,8 @@ const Checkout = () => {
                         </select>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                        {/* first name */}
-                        <div className="flex flex-col space-2 items-start">
+                    {/* first name */}
+                    <div className="flex flex-col space-2 items-start">
                             <label htmlFor="title">First name</label>
                             <input type="text" name="first_name" id="first_name" className="form-control2" placeholder="Emmanuel" />
                         </div>
@@ -93,7 +92,6 @@ const Checkout = () => {
                             <label htmlFor="title">Last name</label>
                             <input type="text" name="first_name" id="last_name" className="form-control2" placeholder="Thompson" />
                         </div>
-                    </div>
 
                     <div className="flex flex-col space-2 items-start">
                         <label htmlFor="title">Country</label>
