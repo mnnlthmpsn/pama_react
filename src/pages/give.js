@@ -70,8 +70,12 @@ const Give = () => {
 
                     {show && active !== 2 && (
                         <div>
+
+                            {active === 0 && <p>Make payment with your mobile money details</p>}
+                            {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with Paystack</p>}
+
                             <div className="mb-5">
-                                { active > 0 && <Dropdown options={foreign_currencies} /> }
+                                {active > 0 && <Dropdown options={foreign_currencies} />}
                             </div>
                             <form className="lg:border rounded lg:p-5 space-y-4">
 
@@ -118,9 +122,9 @@ const Give = () => {
 
                                 <div className="pt-5 text-sm flex space-between items-center space-x-5">
                                     <p>Payment method:</p>
-                                    {   active === 0 
-                                        ? <img src={momo} alt="momo" className='h-10 w-auto'/> 
-                                        : <img src={card} alt="card" className='h-10 w-auto'/> 
+                                    {active === 0
+                                        ? <img src={momo} alt="momo" className='h-10 w-auto' />
+                                        : <img src={card} alt="card" className='h-10 w-auto' />
                                     }
                                 </div>
                                 <div className="pb-5">
