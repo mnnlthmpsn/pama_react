@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { PartnerCard, TextInput, Button } from "../components/components";
+import { useGetHook } from "../hooks/useGetHook";
 
 const Partner = () => {
   return (
     <div className="w-screen h-screen">
-      <div className="h-80 text-white text-5xl bg-hero">
-        <div className="absolute bg-gray-800 h-80 w-screen bg-opacity-70 flex items-center justify-center">
-          Partnership
-        </div>
-      </div>
+      <div className="h-80 text-white text-5xl bg-hero bg-center bg-black bg-contain bg-no-repeat"></div>
       <div className="p-6">
         <p className="text-xl">Are you already a partner?</p>
         <p className="pb-8 text-xl font-semibold">Login Now</p>
@@ -126,6 +123,9 @@ const PartnerShipReason = () => {
 };
 
 const Subscriptions = () => {
+
+  const { data } = useGetHook('packages')
+
   return (
     <div className="bg-[#AA9055] p-6 space-y-6">
       <p className="text-lg text-white">
@@ -133,8 +133,8 @@ const Subscriptions = () => {
         will become a:
       </p>
       <div className="grid gap-5">
-        {[1, 2, 3, 4].map((item) => (
-          <PartnerCard />
+        {data?.sort((a, b) => (a.package.price < b.package.price) ? 1 : -1).map((item) => (
+          <PartnerCard item={item} key={item.id}/>
         ))}
       </div>
     </div>
