@@ -6,9 +6,9 @@ const PartnerCard = ({ item }) => {
   const toCheckout = () => router('/checkout')
 
   return (
-    <div className="border shadow-xl bg-white w-full">
+    <div className="border shadow-xl bg-white w-full"> 
       <div className="p-6 flex flex-col items-center justify-center border-b border-gray-300 bg-gray-100">
-        <p className="font-bold text-3xl pb-4 text-[#2B6CA3]">
+        <p className="font-bold text-2xl pb-4 text-[#2B6CA3] text-center">
           {item?.package.title}
         </p>
         <div className="flex items-start pb-2 text-red-500">
