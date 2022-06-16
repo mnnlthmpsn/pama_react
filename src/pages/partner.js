@@ -133,7 +133,7 @@ const Subscriptions = () => {
         will become a:
       </p>
       <div className="grid gap-5">
-        {data?.sort((a, b) => (a.package.price < b.package.price) ? 1 : -1).map((item) => (
+        {data.map((item) => (
           <PartnerCard item={item} key={item.id}/>
         ))}
       </div>
