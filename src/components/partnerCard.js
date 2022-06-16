@@ -13,7 +13,7 @@ const PartnerCard = ({ item }) => {
         </p>
         <div className="flex items-start pb-2 text-red-500">
           <p className="font-semibold">$</p>
-          <p className="font-bold text-6xl"> {item?.package.price}</p>
+          <p className="font-bold text-6xl"> {item?.package.price.toString().slice(0, -3)}</p>
         </div>
         <p className="text-red-500 pb-2 font-semibold text-lg">Every month</p>
         <p className="text-lg">Partnership</p>
