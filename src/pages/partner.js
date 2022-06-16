@@ -133,7 +133,7 @@ const Subscriptions = () => {
         will become a:
       </p>
       <div className="grid gap-5">
-        {data.map((item) => (
+        {data?.map((item) => (
           <PartnerCard item={item} key={item.id}/>
         ))}
       </div>
