@@ -11,19 +11,15 @@ import { Momo } from '../components/payment/momo'
 import { CreditCard } from '../components/payment/credit'
 import { Paypal } from '../components/payment/paypal'
 import { Dropdown } from '../components/dropdown'
+import { useEffect } from 'react'
 
 const Give = () => {
 
-    const getRates = async (curr) => {
-        let rates = await exchangeRates().setApiBaseUrl('https://api.exchangerate.host').latest()
-            .base(currencies.USD)
-            .symbols([currencies.EUR, currencies.GBP, currencies.GHS])
-            .fetch();
-        console.log(rates)
-    }
-
     const [active, setActive] = useState(0)
     const [show, setShow] = useState(true)
+    const [curr, setCurr] = useState('GHS')
+    const [options, setOptions] = useState({ tithe: 0, offering: 0, donation: 0, seed: 0 })
+    const [total, setTotal] = useState(0)
 
     const payMeds = [
         { title: 'Mobile Money', image: momo },
@@ -31,20 +27,31 @@ const Give = () => {
         { title: 'Paypal', image: paypal },
     ]
 
-    const foreign_currencies = [
-        { key: 'Euro' },
-        { key: 'USD' },
-        { key: 'Candadian Dollar' },
-        { key: 'Pounds' },
-        { key: 'Rands' },
-        { key: 'Naira' },
-    ]
+    const next = e => {
+        e.preventDefault()
+        total > 0 && setShow(!show)
+    }
 
     const navigate = i => {
         setActive(i)
         setShow(true)
 
+        i === 0 ? setCurr('GHS') : setCurr('USD')
     }
+
+    const calcTotal = () => {
+        let sum = 0;
+
+        for (const key in options) {
+            sum += parseInt(options[key])
+        }
+
+        setTotal(sum)
+    }
+
+    useEffect(() => {
+        calcTotal()
+    }, [options])
 
     return (
         <div className='h-screen w-screen flex justify-center overflow-x-hidden'>
@@ -75,47 +82,47 @@ const Give = () => {
                             {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with Paystack</p>}
 
                             <div className="mb-5">
-                                {active > 0 && <Dropdown options={foreign_currencies} />}
+                                {/* {active > 0 && <Dropdown options={foreign_currencies} />} */}
                             </div>
                             <form className="lg:border rounded lg:p-5 space-y-4">
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Tithe</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
-                                        <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <input type="number" min="0" value={options.tithe} onChange={e => setOptions({...options, tithe: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Offerings</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
-                                        <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <input type="number" min="0" value={options.offering} onChange={e => setOptions({...options, offering: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Donation</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
-                                        <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <input type="number" min="0" value={options.donation} onChange={e => setOptions({...options, donation: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Seed</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-2 border-r bg-gray-100">$</p>
-                                        <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <input type="number" min="0" value={options.seed} onChange={e => setOptions({...options, seed: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Total</div>
                                     <div className="items-center flex space-x-4 h-full rounded col-span-2">
-                                        <p className="px-5 py-2 bg-gray-100">$</p>
-                                        <p className='text-green-500'>5.00</p>
+                                        <p className="px-5 py-3 bg-gray-100 rounded-l border text-xs">{curr}</p>
+                                        <p className='text-green-500'>{total.toFixed(2)}</p>
                                         {/* <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" /> */}
                                     </div>
                                 </div>
@@ -128,14 +135,14 @@ const Give = () => {
                                     }
                                 </div>
                                 <div className="pb-5">
-                                    <button className="btn-primary" onClick={() => setShow(!show)}>Next</button>
+                                    <button className="btn-primary" onClick={next}>Next</button>
                                 </div>
                             </form>
                         </div>
                     )}
 
-                    {active === 0 && !show && <Momo setShow={() => setShow} />}
-                    {active === 1 && !show && <CreditCard setShow={() => setShow} />}
+                    {active === 0 && !show && <Momo setShow={() => setShow} options={options} />}
+                    {active === 1 && !show && <CreditCard setShow={() => setShow} options={options} />}
                     {active === 2 && <Paypal />}
                 </div>
             </div>
