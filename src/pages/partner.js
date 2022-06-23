@@ -46,14 +46,11 @@ const PartnerShipReason = () => {
     <div className="p-6 space-y-1">
       <div className="space-y-2">
         <p
-          className="font-semibold text-center uppercase border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
-          onClick={() => setActive("1")}
-        >
+          className="font-semibold text-center uppercase py-2 px-4 flex items-center justify-center">
           Vision
         </p>
         <p
-          className={`text-lg duration-300 ${active === "1" ? "opacity-100" : "opacity-0 h-0"
-            }`}
+          className='text-lg'
         >
           The vision of this ministry is to use every channel available to bring hope to people
           all over the world, to make a difference in the lives of those we touch with the
@@ -64,16 +61,13 @@ const PartnerShipReason = () => {
       </div>
 
       {/* why become a partner */}
-      <div className="space-y-2">
+      <div className="space-y-2 pt-4">
         <p
-          className="text-center font-semibold uppercase space-y-2 border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
-          onClick={() => setActive("2")}
-        >
+          className="text-center font-semibold uppercase space-y-2 py-2 px-4 flex items-center justify-center">
           Why should I become a Partner?
         </p>
         <p
-          className={`text-lg duration-300 ${active === "2" ? "opacity-100" : "opacity-0 h-0"
-            }`}
+          className=''
         >
           Who ever receives a prophet in the name of a prophet will receive the reward of a prophet.
           The Gospel is free to all, but it is very expensive to take it to the nations.
@@ -87,16 +81,13 @@ const PartnerShipReason = () => {
         </p>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 pt-4">
         <p
-          className="w-full h-full font-semibold text-center uppercase border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
-          onClick={() => setActive("3")}
-        >
+          className="w-full h-full font-semibold text-center uppercase py-2 px-4 flex items-center justify-center">
           Who can become a partner
         </p>
         <ul
-          className={`px-10 flex flex-col space-y-4 duration-300 list-disc ${active === "3" ? "opacity-100" : "opacity-0 h-0"
-            }`}
+          className='px-6 flex flex-col space-y-4 list-disc'
         >
           <li>Anyone who believes in our Lord Jesus Christ and His Kingdom</li>
           <li>Anyone who believes in CAM and what it stands for can become a partner</li>
@@ -105,16 +96,13 @@ const PartnerShipReason = () => {
         </ul>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 pt-4">
         <div
-          className="w-full h-full font-semibold text-center uppercase border bg-gray-100 rounded py-2 px-4 flex items-center justify-center"
-          onClick={() => setActive("4")}
-        >
+          className="w-full h-full font-semibold text-center uppercase py-2 px-4 flex items-center justify-center">
           What makes you a partner
         </div>
         <p
-          className={`text-lg duration-300 ${active === "4" ? "opacity-100" : "opacity-0 h-0"
-            }`}
+          className='text-lg'
         >
           Partners are individuals, and families, businesses and ministries that faithfully and periodically sow some level of 
           financial support and prayer into Chris Asante Ministries. Your Partner gift enables CAM to carry out its global 
