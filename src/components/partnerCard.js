@@ -21,7 +21,7 @@ const PartnerCard = ({ item }) => {
       </div>
       <div className="px-10 py-2">
         {item?.benefits.data.map((benefit, i) => (
-          <p className={`py-3 ${i < item.benefits.length && 'border-b'} text-lg font-thin text-center px-2`} key={i}>{benefit.attributes.description}</p>
+          <p className={`py-3 ${i < item.benefits.data.length && 'border-b'} text-lg font-thin text-center px-2`} key={i}>{benefit.attributes.description}</p>
         ))}
       </div>
       <div className="px-8 py-8 w-full">
