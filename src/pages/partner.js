@@ -119,7 +119,7 @@ const Subscriptions = () => {
   const { data, isLoading } = useGetHook('packages?sort[0]=price%3Aasc&fields=title,price&populate[benefits][fields][0]=description')
 
   return (
-    <div className="bg-[#1A1A1C] p-6 space-y-6">
+    <div className="bg-[#AA9055] p-6 space-y-6">
       <p className="text-lg text-white">
         By Sowing and partnering with Prophet Asante and the Holy Spirit, you
         will become a:
