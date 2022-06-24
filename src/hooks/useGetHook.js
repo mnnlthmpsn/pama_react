@@ -5,7 +5,7 @@ export const useGetHook = url => {
     const [isLoading, setLoading] = useState(false)
     const [data, setData] = useState()
 
-    const BASE_URL = 'https://pama-api.herokuapp.com'
+    const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:1337/api' : 'https://pama-api.herokuapp.com/api'
 
     const getData = async () => {
         try {
