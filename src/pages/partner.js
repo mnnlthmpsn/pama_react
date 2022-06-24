@@ -116,7 +116,7 @@ const PartnerShipReason = () => {
 
 const Subscriptions = () => {
 
-  const { data, isLoading } = useGetHook('packages?fields=title,price&populate[benefits][fields][0]=description')
+  const { data, isLoading } = useGetHook('packages?sort[0]=price%3Aasc&fields=title,price&populate[benefits][fields][0]=description')
 
   return (
     <div className="bg-[#1A1A1C] p-6 space-y-6">
