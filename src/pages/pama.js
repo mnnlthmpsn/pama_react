@@ -17,7 +17,7 @@ const PAMA = () => {
                 <p className="text-lg font-light">Chris Asante Ministerial</p>
                 <p className="text-lg font-light">Association</p>
                 <div className="py-8 w-2/3">
-                    <Button label="Join Now" onClick={() => navigate('/apply')} />
+                    <Button label="Join Now" onClick={() => navigate('/join')} />
                 </div>
             </div>
 
@@ -90,7 +90,7 @@ const PAMA = () => {
                         In His Service
                     </p>
 
-                    <Button label="Apply" onClick={() => navigate('/apply')} />
+                    <Button label="Join Now" onClick={() => navigate('/join')} />
                     {/* <button className="py-3 outline-none px-20 primaryColor" onClick={() => navigate('/apply')}>JOIN CAMA</button> */}
                 </div>
             </div>

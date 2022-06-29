@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Give, PAMA, Join, ApplicationForm, Partner, Index, Checkout, Map } from './pages/pages'
+import { Give, PAMA, Join, ApplicationForm, Partner, Index, Checkout, Map, Subscribe } from './pages/pages'
 
 const App = () => {
     return (
@@ -13,6 +13,7 @@ const App = () => {
                 <Route path="partner" element={<Partner />} />
                 <Route path="join" element={<Join />} />
                 <Route path="map" element={<Map />} />
+                <Route path='subscribe' element={<Subscribe />} />
             </Routes>
         </div>
     )

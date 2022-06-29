@@ -5,7 +5,7 @@ const Join = () => {
 
     const navigate = useNavigate()
 
-    const apply = () => navigate('/apply')
+    const apply = () => navigate('/subscribe')
 
     const staffList = [
         { name: 'Emmanuel Thompson', role: 'Sercretary', image: 'https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' }
