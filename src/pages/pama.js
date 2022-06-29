@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { MembersCard, Footer, Benefits } from '../components/components'
+import { MembersCard, Footer, Benefits, Button } from '../components/components'
 import pastor_and_wife from '../images/pw.png'
 
 const PAMA = () => {
@@ -14,10 +14,10 @@ const PAMA = () => {
         <div className="flex flex-col pt-10">
             <div className="flex flex-col items-center justify-center">
                 <p className="font-semibold text-2xl">WELCOME TO</p>
-                <p className="text-lg font-light">Prophet Asante Ministerial</p>
+                <p className="text-lg font-light">Chris Asante Ministerial</p>
                 <p className="text-lg font-light">Association</p>
-                <div className="py-8">
-                    <button className="text-sm py-3 outline-none px-20 primaryColor" onClick={() => navigate('/join')}>JOIN</button>
+                <div className="py-8 w-2/3">
+                    <Button label="Join Now" onClick={() => navigate('/apply')} />
                 </div>
             </div>
 
@@ -25,8 +25,8 @@ const PAMA = () => {
             <div className=''>
                 <img src={pastor_and_wife} loading='lazy' />
                 <div className='sticky w-full h-auto text-white flex flex-col items-center justify-center py-4 bg-black'>
-                    <p>UNDERSTANDING <span className='font-bold'>GRACE</span></p>
-                    <p>EMPOWERING <span className='font-bold'>CHANGE</span></p>
+                    <p>BUILDING <span className='font-bold'>GODLY LEADERS</span></p>
+                    <p>TO <span className='font-bold'>DOMINATE </span> THE WORLD</p>
                 </div>
             </div>
 
@@ -35,96 +35,65 @@ const PAMA = () => {
 
             {/* covenant letter */}
             <div className='flex flex-col items-center justify-center px-5 py-8 bg-gray-200'>
-                {/* <p >COVENANT LETTER</p>
-                <p className='pt-4'>This is the church's finest hour</p> */}
-                {/* <p className='py-2 text-sm font-semibold lightText'>Dear Covenant Friend</p> */}
+                <div className='flex flex-col items-center pb-8'>
+                    <p className='font-bold text-xl'>COVENANT LETTER</p>
+                    <p className='pt-3 font-light'>Ephesians 4:11-13</p>
+                    <p className='text-lg font-light'>This is the church's finest hour</p>
+                </div>
+                <p className='font-light pb-2'>Dear Covenant friend,</p>
                 <div className='flex flex-col space-y-6'>
                     <p>
-                        The vision of this ministry is to use every channel available to bring hope to people all over
-                        the world, to make a difference in the lives of those we touch with the transforming healing power of Christ
-                    </p>
-                    <p>
-                        To reach the lost, encourage and equip believers and spread the good news of Jesus Christ is the purpose of
-                        Chris Asante Ministries. Through your faithful and consistent support, you become an expression of Christ’s love for people.
-                    </p>
-                </div>
-            </div>
-
-            <div className='flex flex-col items-center justify-center px-5 py-8 bg-gray-200'>
-                <p className='uppercase text-lg py-2 font-bold text-center'>WHY SHOULD I BECOME A PARTNER</p>
-
-                <div className='flex flex-col space-y-6'>
-                    <p>
-                        Who ever receives a prophet in the name of a prophet will receive the reward of a prophet.
-                        The Gospel is free to all, but it is very expensive to take it to the nations.
-                        When you become a covenant partner with us , you share the blessings, the eternal rewards and
-                        the fulfillment of what God is doing throughout the earth. Miracles happen for others and for you.
-                        Because of your generosity, God’s favor and goodness become a part of your life and your whole household.
+                        I believe that this is the church’s finest hour. Today is the day
+                        that the body of Christ has longed to see. God’s power is being
+                        poured out. His Spirit is moving. The vast fields of this world
+                        are ripe for harvest. Our time to shine has come.
                     </p>
 
                     <p>
-                        Your decision to make the commitment to partner with me, with your generous monthly ministry gift is a
-                        covenant decision. God is a God of Covenants and Principles. Simply pray about it, and use one of
-                        the options below to decide what kind of Partnership level you feel led of the Holy Spirit to do.
+                        For some time, the Lord has been speaking to my heart about
+                        organizing an Association of churches and ministries for training,
+                        edification, and fellowship
                     </p>
-                </div>
-            </div>
 
-            <div className='flex flex-col items-center justify-center px-5 py-8 bg-gray-200'>
-                <p className='uppercase text-lg py-2 font-bold text-center'>WHO CAN BECOME A PARTNER</p>
-
-                <div className='flex flex-col space-y-6'>
-                    <ul className='list-disc space-y-2 px-4'>
-                        <li>Anyone who believes in our Lord Jesus Christ and His Kingdom</li>
-                        <li>Anyone who believes in CAM and what it stands for can become a partner</li>
-                        <li>You don’t have to be a Pastor, Prophet, evangelist or preacher</li>
-                        <li>Our Partners range from ordinary members of the community, COGA and non- COGA members</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className='flex flex-col items-center justify-center px-5 py-8 bg-gray-200'>
-                <p className='uppercase text-lg py-2 font-bold text-center'>WHAT MAKES YOU A PARTNER</p>
-
-                <div className='flex flex-col space-y-6'>
                     <p>
-                        Partners are individuals, and families, businesses and ministries that faithfully and periodically sow some
-                        level of financial support and prayer into Chris Asante Ministries. Your Partner gift enables CAM to carry
-                        out its global mission and positions you to receive the rewards for the work, the anointings of the ministry
-                        and a grand harvest on your seed sown.
+                        A place where Christian leaders will be empowered and equipped with
+                        the spiritual and physical tools they need to advance the kingdom of
+                        God. An organization that would inspire its members to grow and attain
+                        the highest levels of excellence, integrity, and influence
                     </p>
-                </div>
 
-                <div className="py-8">
-                    <button className="text-sm py-3 outline-none px-20 primaryColor" onClick={() => navigate('/join')}>JOIN NOW</button>
+                    <p>
+                        Out of this union of like-minded individuals, we will multiply our
+                        effectiveness as we arise in corporate faith to impact nations in a
+                        much greater way than one church or ministry could do alone.
+                    </p>
+
+                    <p>
+                        T hrough resource sharing and the corporate anointing, I see the Church
+                        moving into a place of power and influence not seen since the time in
+                        the book of Acts. Uniting under one banner, having a primary focus to
+                        gather in the end time harvest of souls and the end takeover of this world’s wealth
+                    </p>
+
+                    <p>
+                        No more low budget Christian television shows, no longer a shortage of funds
+                        to start a new building project, no more delays in sending out missionaries
+                        due to lack of financial support. We are coming together, no longer taking sides, but taking over.
+                    </p>
+                    <p>
+                        If you feel God’s leading to be a part of an association that I believe will play a significant role
+                        in ushering in the return of our Lord Jesus Christ, I encourage you to complete the attached forms and
+                        submit your application.
+                    </p>
+
+                    <p>
+                        In His Service
+                    </p>
+
+                    <Button label="Apply" onClick={() => navigate('/apply')} />
+                    {/* <button className="py-3 outline-none px-20 primaryColor" onClick={() => navigate('/apply')}>JOIN CAMA</button> */}
                 </div>
             </div>
-
-
-
-            {/* board members */}
-            {/* <div className='flex flex-col px-5 py-8'> */}
-            {/* title */}
-            {/* <div className='flex items-center justify-center pb-6'>
-                    <hr className='w-16 h-1 rounded-lg bg-gray-600' />
-                    <p className='px-4'>Board Members</p>
-                    <hr className='w-16 h-1 rounded-lg bg-gray-600' />
-                </div> */}
-
-            {/* <p className='text-center text-sm font-semibold'>By touching hearts, proclaiming Christ and empowering through grace, we become one in
-                    unity with Christ</p> */}
-
-            {/* members card */}
-            {/* <div className='grid grid-cols-1 py-8'>
-                    {
-                        members.map(member => (
-                            <MembersCard image={member.image} name={member.name} />
-                        ))
-                    }
-                </div> */}
-            {/* </div> */}
-
-            {/* <Footer /> */}
         </div>
     )
 }
