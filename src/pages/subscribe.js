@@ -10,7 +10,8 @@ const Subscribe = () => {
     ]
 
     return (
-        <div className="h-screen w-screen pl-16 pr-10 my-10">
+        <div className="h-screen w-screen pl-16 pr-10 my-10 space-y-8">
+            <p className="py-2 border-b-4 border-red-500 px-1 text-2xl">SUBSCRIPTION PLAN</p>
             <div className="grid lg:grid-cols-3 h-full gap-x-5 gap-y-10">
                 {
                     plans.map((plan, i) => <SubscriptionCard subscription={plan} />)
