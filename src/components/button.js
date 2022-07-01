@@ -4,4 +4,10 @@ const Button = props => {
     )
 }
 
+export const ButtonSm = props => {
+    return (
+        <button className={`${props.isSecondary ? 'bgDark text-white' : 'primaryColor'} rounded w-full text-lg py-2 focus:shadow-lg duration-300 outline-none`} {...props}>{props.label || 'Continue'}</button>
+    )
+}
+
 export default Button
