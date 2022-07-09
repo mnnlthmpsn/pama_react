@@ -1,4 +1,4 @@
-import { ChevronLeftIcon } from "@heroicons/react/solid"
+import { ChevronLeftIcon, EyeIcon } from "@heroicons/react/solid"
 import { useNavigate } from "react-router-dom"
 import FlatPickr from 'react-flatpickr'
 import { useMemo, useState } from "react"
@@ -45,10 +45,10 @@ const Checkout = () => {
                 </div>
 
                 <div className="flex py-4 px-8 justify-between">
-                    <p className="text-2xl">Total</p>
+                    <p className="text-2xl text-green-500">Total</p>
                     <div className="flex flex-col items-end">
-                        <p className="text-3xl">$100</p>
-                        <p>Every month</p>
+                        <p className="text-3xl text-green-500">$100</p>
+                        <p className="uppercase">Every month</p>
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <div className="p-8 border-t-4 shadow-xl space-y-5 border mt-12">
+            <div className="p-8 border-t-2 shadow-xl space-y-5 border mt-12">
                 <p className="text-xl uppercase font-bold">Your Information</p>
                 <form className="space-y-8">
                     {/* title */}
@@ -115,19 +115,25 @@ const Checkout = () => {
                     </div>
 
                     {/* Password */}
-                    <div className="flex flex-col space-2 items-start">
-                        {/* <label htmlFor="title">Email</label> */}
-                        <input type="password" name="email" id="email" className="form-control2" placeholder="Password *" />
+                    <div className="flex items-center justify-between space-x-4">
+                        <div className="flex flex-col space-2 items-start w-full">
+                            {/* <label htmlFor="title">Email</label> */}
+                            <input type="password" name="email" id="email" className="form-control2" placeholder="Password *" />
+                        </div>
+                        <EyeIcon className="h-6 text-gray-500"/>
                     </div>
 
                     {/* Cofirm Password */}
-                    <div className="flex flex-col space-2 items-start">
-                        {/* <label htmlFor="title">Email</label> */}
-                        <input type="text" name="email" id="email" className="form-control2" placeholder="Confirm Password *" />
+                    <div className="flex items-center justify-between space-x-4">
+                        <div className="flex flex-col space-2 items-start w-full">
+                            {/* <label htmlFor="title">Email</label> */}
+                            <input type="text" name="email" id="email" className="form-control2" placeholder="Confirm Password *" />
+                        </div>
+                        <EyeIcon className="h-6 text-gray-500"/>
                     </div>
 
                     <div className="pb-4">
-                        <button className="btn-primary">Activate Covenant</button>
+                        <button className="py-4 rounded-md outline-none px-20 primaryColor w-full tracking-widest uppercase font-bold mt-4">Proceed</button>
                     </div>
                 </form>
             </div>

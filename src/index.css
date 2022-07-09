@@ -50,7 +50,7 @@ html {
 }
 
 .btn-primary {
-    @apply text-sm py-3 rounded-md outline-none px-20 primaryColor w-full
+    @apply py-4 rounded-md outline-none px-20 primaryColor w-full
 }
 
 /* Chrome, Safari, Edge, Opera */
