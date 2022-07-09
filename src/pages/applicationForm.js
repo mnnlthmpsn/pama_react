@@ -35,7 +35,7 @@ const ApplicationForm = () => {
 
       <form className="space-y-5 px-8 pb-12">
 
-        <p className="text-lg mt-16">Fill out the registration form below to gain access to the member-only pages</p>
+        <p className="mt-16">Fill out the registration form below to gain access to the member-only pages</p>
 
         <div class="flex items-center justify-start w-full pb-24">
           <label class="flex flex-col mb-8 w-1/2 h-32">
@@ -52,7 +52,7 @@ const ApplicationForm = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <div class="w-full text-start border rounded-full border-green-500 flex items-center justify-center py-2 border-4 w-4/5">
+              <div class="w-full text-start  rounded-full border-green-500 flex items-center justify-center py-2 border-2 w-4/5">
                 <p>Upload</p>
               </div>
             </div>
@@ -147,11 +147,11 @@ const ApplicationForm = () => {
                 </div>
               </div>
             </div>
-            <p className="text-xl font-bold">Subtotal</p>
+            <p className="text-xl font-bold">Total</p>
             <div className="flex justify-between bg-gray-100 p-2 w-full">
-                <p className="font-bold">Fee</p>
+                <p className="font-bold text-green-500">Fee</p>
                 <div className="flex flex-col justify-end items-end">
-                  <p className="font-bold">0.00 USD</p>
+                  <p className="font-bold text-green-500">0.00 USD</p>
                   <p>Every 24</p>
                   <p>months</p>
                 </div>
