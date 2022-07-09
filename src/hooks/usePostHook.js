@@ -10,7 +10,7 @@ export const usePostHook = payload => {
     const submitPostReq = async () => {
         setLoading(true)
 
-        const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'http://198.199.87.131:7018'
+        const BASE_URL = process.env.NODE_ENV === 'development' ? 'https://pama-api.herokuapp.com/api' : 'http://198.199.87.131:7018'
 
         try {
             const { url, body } = payload

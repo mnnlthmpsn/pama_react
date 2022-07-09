@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import Button, { ButtonSm } from "../components/button"
+import { ButtonSm } from "../components/button"
 
 const Subscribe = () => {
 
