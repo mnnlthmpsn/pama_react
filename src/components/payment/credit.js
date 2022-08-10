@@ -42,8 +42,8 @@ export const CreditCard = ({ setShow, options }) => {
                                 <div className="col-span-2">
                                     <p className='capitalize'>{option.key}</p>
                                 </div>
-                                <div className="col-span-2 flex space-x-4">
-                                    <p>USD</p>
+                                <div className="col-span-1 flex space-x-4">
+                                    <p>$</p>
                                     <p>{option.value.toFixed(2)}</p>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@ export const CreditCard = ({ setShow, options }) => {
                             <p>Total</p>
                         </div>
                         <div className="col-span-2 flex space-x-4">
-                            <p>USD</p>
+                            <p>$</p>
                             <p className="text-green">{total.toFixed(2)}</p>
                         </div>
                     </div>

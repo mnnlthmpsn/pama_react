@@ -36,7 +36,7 @@ const Give = () => {
         setActive(i)
         setShow(true)
 
-        i === 0 ? setCurr('GHS') : setCurr('USD')
+        i === 0 ? setCurr('₵') : setCurr('$')
     }
 
     const calcTotal = () => {
@@ -79,7 +79,7 @@ const Give = () => {
                         <div>
 
                             {active === 0 && <p>Make payment with your mobile money details</p>}
-                            {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with Paystack</p>}
+                            {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with our online hosted checkout</p>}
 
                             <div className="mb-5">
                                 {/* {active > 0 && <Dropdown options={foreign_currencies} />} */}
@@ -89,7 +89,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Tithe</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.tithe} onChange={e => setOptions({...options, tithe: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Offerings</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.offering} onChange={e => setOptions({...options, offering: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Donation</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.donation} onChange={e => setOptions({...options, donation: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Seed</div>
                                     <div className="border flex rounded col-span-2">
-                                        <p className="px-5 py-3 bg-gray-100 text-xs border-r">{curr}</p>
+                                        <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.seed} onChange={e => setOptions({...options, seed: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ const Give = () => {
                                 <div className="grid grid-cols-4 items-center">
                                     <div className="col-span-1">Total</div>
                                     <div className="items-center flex space-x-4 h-full rounded col-span-2">
-                                        <p className="px-5 py-3 bg-gray-100 rounded-l border text-xs">{curr}</p>
+                                        <p className="px-3 py-3 bg-gray-100 rounded-l border text-xs">{curr}</p>
                                         <p className='text-green-500'>{total.toFixed(2)}</p>
                                         {/* <input type="text" className="outline-none w-full bg-gray-50 text-sm p-2" /> */}
                                     </div>
