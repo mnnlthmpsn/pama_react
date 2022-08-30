@@ -17,7 +17,7 @@ const Give = () => {
 
     const [active, setActive] = useState(0)
     const [show, setShow] = useState(true)
-    const [curr, setCurr] = useState('GHS')
+    const [curr, setCurr] = useState('₵')
     const [options, setOptions] = useState({ tithe: 0, offering: 0, donation: 0, seed: 0 })
     const [total, setTotal] = useState(0)
 
@@ -78,7 +78,7 @@ const Give = () => {
                     {show && active !== 2 && (
                         <div>
 
-                            {active === 0 && <p>Make payment with your mobile money details</p>}
+                            {active === 0 && <p>Donation Amount</p>}
                             {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with our online hosted checkout</p>}
 
                             <div className="mb-5">

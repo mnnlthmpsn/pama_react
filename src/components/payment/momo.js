@@ -1,4 +1,5 @@
 import momo from '../../images/momo.png'
+import axios from 'axios'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import { Dropdown } from "../dropdown"
 import { useEffect } from 'react'
@@ -13,6 +14,8 @@ export const Momo = ({ setShow, options }) => {
     ]
 
     const [selected, setSelected] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [description, setDescription] = useState('')
     const [total, setTotal] = useState(0)
 
     const calcFinal = () => {
@@ -27,6 +30,33 @@ export const Momo = ({ setShow, options }) => {
 
         setSelected(temp)
         setTotal(sum)
+    }
+
+    const give = async () => {
+        const api_url = process.env.NODE_ENV === "production" ? "https://pama-api.herokuapp.com" : "http://localhost:1337"
+        setIsLoading(true)
+        const payload = {
+            totalAmount: total,
+            description: "offering"
+        }
+
+        var config = {
+            method: 'post',
+            url: `${api_url}/api/payment`,
+            headers: { 'Content-Type': 'application/json' },
+            data: payload
+        }
+
+        const { data, status } = await axios(config)
+        
+        if (status === 200) {
+            const response = JSON.parse(data.data)
+            window.location.replace(response.data.checkoutUrl)
+        } else {
+            alert("An error occured")
+        }
+
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -69,7 +99,7 @@ export const Momo = ({ setShow, options }) => {
             </div>
 
             <div className='mt-8'>
-                <p className='py-4 font-bold text-lg'>Details</p>
+                {/* <p className='py-4 font-bold text-lg'>Details</p>
                 <div className="pt-2">
                     <label htmlFor="">Name</label>
                     <input type="text" className="form-control" />
@@ -80,9 +110,9 @@ export const Momo = ({ setShow, options }) => {
                 </div>
                 <div className="pt-8">
                     <Dropdown label="Network" options={nw} />
-                </div>
+                </div> */}
                 <div className="pt-6">
-                    <button className="btn-primary">Give Now</button>
+                    <button className="btn-primary" onClick={give} disabled={isLoading}>{isLoading ? "...loading" : "Give"}</button>
                 </div>
             </div>
         </div>
