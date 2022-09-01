@@ -1,9 +1,6 @@
-import momo from '../../images/momo.png'
 import axios from 'axios'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
-import { Dropdown } from "../dropdown"
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const Momo = ({ setShow, options }) => {
 

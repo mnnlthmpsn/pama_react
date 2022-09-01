@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { exchangeRates, currencies } from "exchange-rates-api"
 
 
 import momo from '../images/momo.png'
@@ -17,7 +16,7 @@ const Give = () => {
 
     const [active, setActive] = useState(0)
     const [show, setShow] = useState(true)
-    const [curr, setCurr] = useState('₵')
+    const [curr, setCurr] = useState('GHS')
     const [options, setOptions] = useState({ tithe: 0, offering: 0, donation: 0, seed: 0 })
     const [total, setTotal] = useState(0)
 
@@ -36,7 +35,7 @@ const Give = () => {
         setActive(i)
         setShow(true)
 
-        i === 0 ? setCurr('₵') : setCurr('$')
+        i === 0 ? setCurr('GHS') : setCurr('$')
     }
 
     const calcTotal = () => {
@@ -78,7 +77,7 @@ const Give = () => {
                     {show && active !== 2 && (
                         <div>
 
-                            {active === 0 && <p>Donation Amount</p>}
+                            {active === 0 && <p className='font-semibold'>Donation Amount</p>}
                             {active === 1 && <p className='pb-2'>Your details are safe with us. Checkout securely with our online hosted checkout</p>}
 
                             <div className="mb-5">

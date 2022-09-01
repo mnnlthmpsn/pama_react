@@ -1,12 +1,15 @@
 import { ArrowLeftIcon } from "@heroicons/react/solid"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+import { exchangeRates } from "exchange-rates-api"
+import axios from 'axios'
 import card from '../../images/card.png'
 
 export const CreditCard = ({ setShow, options }) => {
 
     const [selected, setSelected] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const [total, setTotal] = useState(0)
+    const [exchangeRate, setExchangeRate] = useState(10)
 
     const calcFinal = () => {
         const temp = []
@@ -22,8 +25,42 @@ export const CreditCard = ({ setShow, options }) => {
         setTotal(sum)
     }
 
+    const give = async () => {
+        const api_url = process.env.NODE_ENV === "production" ? "https://pama-api.herokuapp.com" : "http://localhost:1337"
+        setIsLoading(true)
+        const payload = {
+            totalAmount: total * exchangeRate,
+            description: "offering"
+        }
+
+        var config = {
+            method: 'post',
+            url: `${api_url}/api/payment`,
+            headers: { 'Content-Type': 'application/json' },
+            data: payload
+        }
+
+        const { data, status } = await axios(config)
+        
+        if (status === 200) {
+            const response = JSON.parse(data.data)
+            window.location.replace(response.data.checkoutUrl)
+        } else {
+            alert("An error occured")
+        }
+
+        setIsLoading(false)
+    }
+
+    const _getExchangeRate = async () => {
+        console.log('this ran')
+        const res = await exchangeRates().setApiBaseUrl('https://api.exchangerate.host').latest().base('USD').fetch();
+        setExchangeRate(res.GHS)
+    }
+
     useEffect(() => {
         calcFinal()
+        _getExchangeRate()
     }, [options])
 
     return (
@@ -58,6 +95,7 @@ export const CreditCard = ({ setShow, options }) => {
                             <p className="text-green">{total.toFixed(2)}</p>
                         </div>
                     </div>
+                    <p className="text-xs py-3 text-green">This is equivalent to (GHS {(total * exchangeRate).toFixed(2)})</p>
                     <div className="grid grid-cols-4 items-center pt-6">
                         <div className="col-span-1">
                             <p>Payment</p>
@@ -69,9 +107,9 @@ export const CreditCard = ({ setShow, options }) => {
                             Change
                         </div>
                     </div>
-                    <p className="text-sm mt-10 text-xs text-center">You'll be redirected to a trusted provider to continue payment</p>
+                    {/* <p className="text-sm mt-10 text-xs text-center">You'll be redirected to a trusted provider to continue payment</p> */}
                     <div className="pt-6">
-                        <button className="btn-primary">Continue</button>
+                        <button className="btn-primary" onClick={give}>{isLoading ? "...loading" : "Give"}</button>
                 </div>
                 </div>
             </div>
