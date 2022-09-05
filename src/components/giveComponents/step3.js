@@ -1,7 +1,10 @@
 import { Fragment } from "react"
 import { Button } from '../components'
 import card from '../../images/card.png'
-import momo from '../../images/momo.png'
+import mtn from '../../images/mtnn.png'
+import vod from '../../images/vod.png'
+import tigo from '../../images/tigo.png'
+import air from '../../images/air.png'
 
 const Step3 = ({ paymentType, makePayment }) => {
     return (
@@ -22,7 +25,10 @@ const Momo = ({ makePayment }) => {
     return (
         <Fragment>
             <div className="flex justify-center">
-                <img src={momo} className="h-28 w-auto" />
+                <img src={mtn} className="h-28 w-auto" />
+                <img src={vod} className="h-28 w-auto" />
+                <img src={tigo} className="h-28 w-auto" />
+                <img src={air} className="h-28 w-auto" />
             </div>
 
             <form className="grid grid-cols-2 gap-4" onSubmit={makePayment}>

@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
 
-import momo from '../images/momo.png'
+import mtn from '../images/mtnn.png'
+import vod from '../images/vod.png'
+import tigo from '../images/tigo.png'
+import air from '../images/air.png'
+
 import card from '../images/card.png'
 import paypal from '../images/paypal.png'
 import give from '../images/give2.jpg'
@@ -21,7 +25,7 @@ const Give = () => {
     const [total, setTotal] = useState(0)
 
     const payMeds = [
-        { title: 'Mobile Money', image: momo },
+        { title: 'Mobile Money', image: mtn },
         { title: 'Debit/Credit Card', image: card },
         { title: 'Paypal', image: paypal },
     ]
@@ -129,7 +133,12 @@ const Give = () => {
                                 <div className="pt-5 text-sm flex space-between items-center space-x-5">
                                     <p>Payment method:</p>
                                     {active === 0
-                                        ? <img src={momo} alt="momo" className='h-10 w-auto' />
+                                        ? <div className='flex'>
+                                            <img src={mtn} alt="momo" className='h-6 w-auto' />
+                                            <img src={vod} alt="momo" className='h-6 w-auto' />
+                                            <img src={air} alt="momo" className='h-6 w-auto' />
+                                            <img src={tigo} alt="momo" className='h-6 w-auto' />
+                                        </div>
                                         : <img src={card} alt="card" className='h-10 w-auto' />
                                     }
                                 </div>
