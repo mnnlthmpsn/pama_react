@@ -131,7 +131,7 @@ const Give = () => {
                                 </div>
 
 
-                                <div className="py-5 flex space-between border-t items-center space-x-5">
+                                <div className="py-8 flex space-between border-t items-center space-x-5">
                                     <p className='tex-2xl'>Payment method</p>
                                     {active === 0
                                         ? <div className='flex space-x-1'>
