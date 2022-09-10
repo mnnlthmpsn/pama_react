@@ -106,7 +106,7 @@ const Give = () => {
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
-                                    <div className="col-span-1">First Fruit</div>
+                                    <div className="col-span-1">Firstfruit</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.donation} onChange={e => setOptions({...options, donation: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
@@ -130,8 +130,8 @@ const Give = () => {
                                     </div>
                                 </div>
 
-                                <div className="py-5 text-sm flex space-between items-center space-x-5">
-                                    <p>Payment method:</p>
+                                <div className="py-5 flex space-between border-t-2 items-center space-x-5">
+                                    <p className='tex-2xl'>Payment method</p>
                                     {active === 0
                                         ? <div className='flex space-x-1'>
                                             <img src={mtn} alt="momo" className='h-6 w-auto' />
@@ -142,8 +142,9 @@ const Give = () => {
                                         : <img src={card} alt="card" className='h-10 w-auto' />
                                     }
                                 </div>
+
                                 <div className="pb-5">
-                                    <button className="btn-primary" onClick={next}>Next</button>
+                                    <button className="btn-primary tracking-widest font-semibold uppercase" onClick={next}>Next</button>
                                 </div>
                             </form>
                         </div>
