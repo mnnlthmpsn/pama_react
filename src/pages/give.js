@@ -59,10 +59,10 @@ const Give = () => {
     return (
         <div className='h-screen w-screen flex justify-center overflow-x-hidden'>
             <div className='lg:w-1/2 h-full'>
-                <div className="relative bgDark h-72">
+                <div className="relative bgDark h-32">
                     <div className="absolute w-full h-full z-10 flex items-center justify-center">
                     </div>
-                    <img src={give} className="h-72 w-full object-cover object-center" alt="" />
+                    <img src={give} className="h-32 w-full object-cover object-center" alt="" />
                 </div>
 
                 <div className='py-8 grid grid-cols-3 w-full px-2 lg:px-32 gap-2 lg:gap-4'>
