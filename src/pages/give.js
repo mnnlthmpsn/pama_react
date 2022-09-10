@@ -121,7 +121,7 @@ const Give = () => {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-4 items-center">
+                                <div className="grid grid-cols-4 items-center pb-8">
                                     <div className="col-span-1">Total</div>
                                     <div className="items-center flex space-x-4 h-full rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 rounded-l border text-xs">{curr}</p>
@@ -130,7 +130,8 @@ const Give = () => {
                                     </div>
                                 </div>
 
-                                <div className="py-5 flex space-between border-t-2 items-center space-x-5">
+
+                                <div className="py-5 flex space-between border-t items-center space-x-5">
                                     <p className='tex-2xl'>Payment method</p>
                                     {active === 0
                                         ? <div className='flex space-x-1'>
