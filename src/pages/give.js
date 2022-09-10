@@ -130,10 +130,10 @@ const Give = () => {
                                     </div>
                                 </div>
 
-                                <div className="pt-5 text-sm flex space-between items-center space-x-5">
+                                <div className="py-5 text-sm flex space-between items-center space-x-5">
                                     <p>Payment method:</p>
                                     {active === 0
-                                        ? <div className='flex'>
+                                        ? <div className='flex space-x-1'>
                                             <img src={mtn} alt="momo" className='h-6 w-auto' />
                                             <img src={vod} alt="momo" className='h-6 w-auto' />
                                             <img src={air} alt="momo" className='h-6 w-auto' />
