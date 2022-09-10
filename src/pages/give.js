@@ -106,7 +106,7 @@ const Give = () => {
                                 </div>
 
                                 <div className="grid grid-cols-4 items-center">
-                                    <div className="col-span-1">Donation</div>
+                                    <div className="col-span-1">First Fruit</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
                                         <input type="number" min="0" value={options.donation} onChange={e => setOptions({...options, donation: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
