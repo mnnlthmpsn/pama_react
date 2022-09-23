@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, EyeIcon } from "@heroicons/react/solid"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import FlatPickr from 'react-flatpickr'
 import { useMemo, useState } from "react"
 import countryList from "react-select-country-list"
@@ -7,6 +7,7 @@ import countryList from "react-select-country-list"
 const Checkout = () => {
 
     const router = useNavigate()
+    const { state } = useLocation()
     const [date, setDate] = useState(() => new Date())
     const [country, setCountry] = useState('')
     const options = useMemo(() => countryList().getData(), [])
@@ -47,7 +48,7 @@ const Checkout = () => {
                 <div className="flex py-4 px-8 justify-between">
                     <p className="text-2xl text-green-500">Total</p>
                     <div className="flex flex-col items-end">
-                        <p className="text-3xl text-green-500">$100</p>
+                        <p className="text-3xl text-green-500">$ {state?.price}</p>
                         <p className="uppercase">Every month</p>
                     </div>
                 </div>

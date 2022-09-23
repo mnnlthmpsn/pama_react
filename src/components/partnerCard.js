@@ -4,7 +4,7 @@ const PartnerCard = ({ item }) => {
   console.log(item)
 
   const router = useNavigate()
-  const toCheckout = () => router('/checkout')
+  const toCheckout = price => router('/checkout', { state: { price } })
 
   return (
     <div className="border shadow-xl bg-white w-full"> 
@@ -25,7 +25,7 @@ const PartnerCard = ({ item }) => {
         ))}
       </div>
       <div className="px-8 py-8 w-full">
-          <button className="italic text-sm border py-3 text-white bg-[#FF0000] w-full" onClick={toCheckout}>
+          <button className="italic text-sm border py-3 text-white bg-[#FF0000] w-full" onClick={() => toCheckout(item?.price)}>
             Sign Up Here
           </button>
         </div>

@@ -2,18 +2,20 @@ import { useState } from 'react'
 
 
 import mtn from '../images/mtnn.png'
+import all_nw from '../images/nw_all.png'
 import vod from '../images/vod.png'
 import tigo from '../images/tigo.png'
 import air from '../images/air.png'
 
 import card from '../images/card.png'
+import visa from '../images/visa.png'
+import master from '../images/master.png'
 import paypal from '../images/paypal.png'
 import give from '../images/give2.jpg'
 
 import { Momo } from '../components/payment/momo'
 import { CreditCard } from '../components/payment/credit'
 import { Paypal } from '../components/payment/paypal'
-import { Dropdown } from '../components/dropdown'
 import { useEffect } from 'react'
 
 const Give = () => {
@@ -25,7 +27,7 @@ const Give = () => {
     const [total, setTotal] = useState(0)
 
     const payMeds = [
-        { title: 'Mobile Money', image: mtn },
+        { title: 'Mobile Money', image: all_nw },
         { title: 'Debit/Credit Card', image: card },
         { title: 'Paypal', image: paypal },
     ]
@@ -140,7 +142,10 @@ const Give = () => {
                                             <img src={air} alt="momo" className='h-6 w-auto' />
                                             <img src={tigo} alt="momo" className='h-6 w-auto' />
                                         </div>
-                                        : <img src={card} alt="card" className='h-10 w-auto' />
+                                        : <div className="flex space-x-1">
+                                            <img src={visa} alt="card" className='h-10 w-auto' />
+                                            <img src={master} alt="card" className='h-10 w-auto' />
+                                        </div>
                                     }
                                 </div>
 
