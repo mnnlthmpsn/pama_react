@@ -30,7 +30,7 @@ export const Momo = ({ setShow, options }) => {
     }
 
     const give = async () => {
-        const api_url = process.env.NODE_ENV === "production" ? "https://cogairadio.com/cama-api" : "http://localhost:1337"
+        const api_url = process.env.NODE_ENV === "production" ? "https://cogairadio.com/cama-api" : "http://localhost:1337/api"
         setIsLoading(true)
         const payload = {
             totalAmount: total,
@@ -44,13 +44,12 @@ export const Momo = ({ setShow, options }) => {
             data: payload
         }
 
-        const { data, status } = await axios(config)
-        
-        if (status === 200) {
-            const response = JSON.parse(data.data)
-            window.location.replace(response.data.checkoutUrl)
+        const { data } = await axios(config)
+
+        if (data.status === "Success") {
+            window.location.replace(data.data.checkoutUrl)
         } else {
-            alert("An error occured")
+            alert(data["message"])
         }
 
         setIsLoading(false)
