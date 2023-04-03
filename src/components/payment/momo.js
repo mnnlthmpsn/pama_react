@@ -30,16 +30,16 @@ export const Momo = ({ setShow, options }) => {
     }
 
     const give = async () => {
-        const api_url = process.env.NODE_ENV === "production" ? "https://pama-api.herokuapp.com" : "http://localhost:1337"
+        const api_url = process.env.NODE_ENV === "production" ? "https://cogairadio.com/cama-api" : "http://localhost:1337"
         setIsLoading(true)
         const payload = {
             totalAmount: total,
             description: "offering"
         }
 
-        var config = {
+        const config = {
             method: 'post',
-            url: `${api_url}/api/payment`,
+            url: `${api_url}/payment/submit`,
             headers: { 'Content-Type': 'application/json' },
             data: payload
         }

@@ -60,11 +60,14 @@ const Give = () => {
 
     return (
         <div className='h-screen w-screen flex justify-center overflow-x-hidden'>
-            <div className='lg:w-1/2 h-full'>
-                <div className="relative bgDark h-32">
-                    <div className="absolute w-full h-full z-10 flex items-center justify-center">
+            <div className='md:w-2/3 lg:w-1/2 flex flex-col h-full'>
+
+                <div className='mb-24'>
+                    <div className="relative bgDark h-32">
+                        <div className="absolute w-full h-full z-10 flex items-center justify-center">
+                        </div>
+                        <img src={give} className="h-56 w-full object-cover object-center" alt="" />
                     </div>
-                    <img src={give} className="h-32 w-full object-cover object-center" alt="" />
                 </div>
 
                 <div className='py-8 grid grid-cols-3 w-full px-2 lg:px-32 gap-2 lg:gap-4'>
@@ -95,7 +98,7 @@ const Give = () => {
                                     <div className="col-span-1">Tithe</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
-                                        <input type="number" min="0" value={options.tithe} onChange={e => setOptions({...options, tithe: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <input type="number" min="0" value={options.tithe} onChange={e => setOptions({ ...options, tithe: e.target.value })} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
@@ -103,7 +106,7 @@ const Give = () => {
                                     <div className="col-span-1">Offerings</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
-                                        <input type="number" min="0" value={options.offering} onChange={e => setOptions({...options, offering: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <input type="number" min="0" value={options.offering} onChange={e => setOptions({ ...options, offering: e.target.value })} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
@@ -111,7 +114,7 @@ const Give = () => {
                                     <div className="col-span-1">Firstfruit</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
-                                        <input type="number" min="0" value={options.donation} onChange={e => setOptions({...options, donation: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <input type="number" min="0" value={options.donation} onChange={e => setOptions({ ...options, donation: e.target.value })} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
@@ -119,7 +122,7 @@ const Give = () => {
                                     <div className="col-span-1">Seed</div>
                                     <div className="border flex rounded col-span-2">
                                         <p className="px-3 py-3 bg-gray-100 text-xs border-r">{curr}</p>
-                                        <input type="number" min="0" value={options.seed} onChange={e => setOptions({...options, seed: e.target.value})} className="outline-none w-full bg-gray-50 text-sm p-2" />
+                                        <input type="number" min="0" value={options.seed} onChange={e => setOptions({ ...options, seed: e.target.value })} className="outline-none w-full bg-gray-50 text-sm p-2" />
                                     </div>
                                 </div>
 
@@ -170,7 +173,7 @@ export default Give
 const Card = ({ crd, index, active }) => {
     return (
         <div className={`cursor-pointer font-semibold relative border rounded-lg p-8 flex flex-col items-center duration-300 h-44 lg:h-56 group ${active === index ? 'border-red-500' : 'border-gray-400'}`}>
-            <img src={crd.image} className='h-60 object-contain ' />
+            <img src={crd.image} className='h-20 object-contain ' />
             <p className='text-center text-sm'>{crd.title}</p>
             <div className={
                 `absolute mx-10 group-hover:opacity-100 duration-500 bg-red-400 bottom-5 ${active === index ? 'w-2/3 h-0.5' : 'h-0.4 w-14 opacity-0'}`
