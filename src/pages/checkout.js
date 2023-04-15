@@ -102,7 +102,7 @@ const Checkout = () => {
                     {/* Phone */}
                     <div className="flex flex-col space-2 items-start">
                         {/* <label htmlFor="title">Phone</label> */}
-                        <input type="tel" name="phone" id="phone" className="form-control2" placeholder="Country *" />
+                        <input type="text" name="country" id="country" className="form-control2" placeholder="Country *" />
                     </div>
 
                     {/* Email */}
