@@ -116,7 +116,7 @@ const PartnerShipReason = () => {
 
 const Subscriptions = () => {
 
-  const { data, isLoading } = useGetHook('packages?sort[0]=price%3Aasc&fields=title,price&populate[benefits][fields][0]=description')
+  const { data, isLoading } = useGetHook('packages')
 
   return (
     <div className="bg-[#AA9055] p-6 space-y-6">
@@ -127,7 +127,7 @@ const Subscriptions = () => {
       <div className="grid gap-5">
         { isLoading && <p className="text-center py-4 text-white">...loading</p> }
         {data?.map((item) => (
-          <PartnerCard item={item.attributes} key={item.id} />
+          <PartnerCard item={item} key={item.id} />
         ))}
       </div>
     </div>

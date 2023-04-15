@@ -9,10 +9,6 @@ const Checkout = () => {
     const router = useNavigate()
     const { state } = useLocation()
     const [date, setDate] = useState(() => new Date())
-    const [country, setCountry] = useState('')
-    const options = useMemo(() => countryList().getData(), [])
-
-    const changeHandler = e => setCountry(e.target.value)
 
     return (
         <div className="flex flex-col pt-8 overflow-x-hidden">
@@ -26,7 +22,7 @@ const Checkout = () => {
 
 
             <div className="shadow-xl border-t pt-5">
-                <p className="text-xl pb-6 px-8 font-bold">Platinum Partner</p>
+                <p className="text-xl pb-6 px-8 font-bold">{state?.item.title}</p>
 
                 {/* date picker */}
                 <div className="flex flex-col space-y-2 pb-3 px-8 font-light">
@@ -48,7 +44,7 @@ const Checkout = () => {
                 <div className="flex py-4 px-8 justify-between">
                     <p className="text-2xl text-green-500">Total</p>
                     <div className="flex flex-col items-end">
-                        <p className="text-3xl text-green-500">$ {state?.price}</p>
+                        <p className="text-3xl text-green-500">$ {state?.item.price}</p>
                         <p className="uppercase">Every month</p>
                     </div>
                 </div>
@@ -56,7 +52,7 @@ const Checkout = () => {
                 <p className="py-5 font-light border-b px-8">You will be charged monthly until canceled</p>
 
                 <div className="p-8 space-y-5 shadow-lg">
-                    <p className="text-xl">Select Payment Method</p>
+                    {/* <p className="text-xl">Select Payment Method</p>
                     <div className="flex font-light flex-col space-y-2">
                         <label className="flex space-x-3 items-center">
                             <input type="radio" name="payment_method" />
@@ -72,7 +68,7 @@ const Checkout = () => {
                             <input type="radio" name="payment_method" />
                             <p>Paypal</p>
                         </label>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
